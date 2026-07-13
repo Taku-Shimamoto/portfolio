@@ -2,9 +2,10 @@
 <html lang="ja">
     <head>
         <link rel="stylesheet" href="common.css" />
-        <meta cherset= "UTF-8" />
+        <meta charset= "UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="common.js"></script>
+        <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
         <title>Taku Shimamoto's Portfolio</title>
     </head>
     <body>
@@ -26,16 +27,81 @@
                 </ul>
             </div>
         </header>
+        <div class="main-img">
+            <h2>Taku Shimamoto<span>No workout, no life.</span></h2>
+        </div>
         <main>
-            <div class="contents-block">
-                <h2 id="profile">Profile</h2>
-            </div>
-            <div class="contents-block">
-                <h2 id="works">Works</h2>
-            </div>
-            <div class="contents-block">
-                <h2 id="contact">Contact</h2>
-            </div>
+            <section>
+                <h3 id="profile">Profile</h3>
+                <div class="contents-block">
+                    <div class="profile-wrapper">
+                        <img class="profile-img" src="images/profile.jpg" alt="" />
+                        <div class="profile-text">
+                            <p>Name: 島本 拓</p>
+                            <p>Age: 35</p>
+                            <p>Birthday: 1990 / 10 / 15</p>
+                            <p>From: 東京都八王子市</p>
+                            <div class="career">
+                                Career:
+                                <p>大学院の博士前期課程にて英語学を専攻。</p>
+                                <p>大学院修了後、英語教師として9年勤務。</p>
+                                <p>その後、事務職経験を経て就労移行支援ディーキャリアITエキスパートにて、プログラミングコースを履修。</p>
+                            </div>
+                            <div class="skills">
+                                Skills:
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>PHP</li>
+                                    <li>MySQL</li>
+                                    <li>Typing: e-typing score 467(LaserBeam)</li>
+                                    <li>English</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="button" id="profile_more">View more!</button>
+                </div>
+            </section>
+            <section>
+                <h3 id="works">Works</h3>
+                <div class="contents-block">
+                    <div class="works-wrapper">
+                        <div class="work">
+                            <a href="works/portfolio.html">
+                                <img class="work-img" src="images/portfolio.png" alt="portfolio" />
+                                <h4>Taku Shimamoto's Portfolio</h4>
+                            </a>
+                        </div>
+                        <div class="work">
+                            <a href="works/ui_dictionary.html">
+                                <img class="work-img" src="images/ui_dictionary.png" alt="UI Dictionary" />
+                                <h4>UI Dictionary</h4>
+                            </a>
+                        </div>
+                        <div class="work">
+                            <a href="works/ec_site.html">
+                                <img class="work-img" src="images/ec_site.png" alt="Sports Club Handstone EC Site" />
+                                <h4>Sports Club Handstone EC Site</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <button type="button" class="button" id="works_more">View more!</button>
+                </div>
+            </section>
+            <section>
+                <h3 id="contact">Contact</h3>
+                <i class="fa-regular fa-envelope"></i>handstone1015@gmail.com
+                <form>
+                    <label for="name">名前:</label>
+                    <input type="text" id="name" name="name" placeholder="あなたの名前" /><br />
+                    <label for="address">メールアドレス:</label>
+                    <input type="email" id="address" name="address" placeholder="Eメールアドレス" /><br />
+                    <label for="content">お伝えしたい内容:</label><br />
+                    <textarea name="content" placeholder="お伝えしたい内容をご記入ください"></textarea>
+                </form>
+            </section>
         </main>
         <footer>
             Copyright &copy; 2026 Taku Shimamoto
