@@ -10,22 +10,20 @@
     </head>
     <body>
         <header>
-            <div class="header-left">
-                <h1>
+            <h1 class="header-left">
                     <a href="index.html">
                         <span>Taku</span>
                         <span>Shimamoto</span>
                     </a>
                 </h1>
-            </div>
-            <div class="header-right">
+            <nav class="header-right">
                 <ul class="menu-list">
                     <li class="menu"><a href="#">Top</a></li>
                     <li class="menu"><a href="#profile">Profile</a></li>
                     <li class="menu"><a href="#works">Works</a></li>
                     <li class="menu"><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </header>
         <div class="main-img">
             <h2>Taku Shimamoto<span>No workout, no life.</span></h2>
@@ -38,7 +36,6 @@
                         <img class="profile-img" src="images/profile.jpg" alt="" />
                         <div class="profile-text">
                             <p>Name: 島本 拓</p>
-                            <p>Age: 35</p>
                             <p>Birthday: 1990 / 10 / 15</p>
                             <p>From: 東京都八王子市</p>
                             <div class="career">
@@ -48,20 +45,24 @@
                                 <p>その後、事務職経験を経て就労移行支援ディーキャリアITエキスパートにて、プログラミングコースを履修。</p>
                             </div>
                             <div class="skills">
-                                Skills:
+                                Skills:<br />
+                                 Programming Skills
                                 <ul>
                                     <li>HTML</li>
                                     <li>CSS</li>
                                     <li>JavaScript</li>
                                     <li>PHP</li>
                                     <li>MySQL</li>
-                                    <li>Typing: e-typing score 467(LaserBeam)</li>
+                                </ul>
+                                 Other Skills
+                                <ul>
                                     <li>English</li>
+                                    <li>e-typing Score 467(LaserBeam)</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="button" id="profile_more">View more!</button>
+                    <button type="button" class="button" id="profile_more">View More</button>
                 </div>
             </section>
             <section>
@@ -87,19 +88,19 @@
                             </a>
                         </div>
                     </div>
-                    <button type="button" class="button" id="works_more">View more!</button>
+                    <button type="button" class="button" id="works_more">View More</button>
                 </div>
             </section>
             <section>
                 <h3 id="contact">Contact</h3>
                 <i class="fa-regular fa-envelope"></i>handstone1015@gmail.com
-                <form>
+                <form id="contact_form">
                     <label for="name">名前:</label>
-                    <input type="text" id="name" name="name" placeholder="あなたの名前" /><br />
+                    <input type="text" id="name" name="name" placeholder="あなたの名前" autocomplete="name"/>
                     <label for="address">メールアドレス:</label>
-                    <input type="email" id="address" name="address" placeholder="Eメールアドレス" /><br />
-                    <label for="content">お伝えしたい内容:</label><br />
-                    <textarea name="content" placeholder="お伝えしたい内容をご記入ください"></textarea>
+                    <input type="email" id="address" name="address" placeholder="Eメールアドレス" autocomplete="email"/>
+                    <label for="content">お伝えしたい内容:</label>
+                    <textarea id="content" name="content" placeholder="お伝えしたい内容をご記入ください" rows="8"></textarea>
                 </form>
             </section>
         </main>

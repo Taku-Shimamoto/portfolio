@@ -128,7 +128,7 @@ h1 span:last-child {
     line-height: var(--header-height);
     padding: 0 var(--space-x-small);
     text-align: center;
-    width: var(--menu-width);
+    max-width: var(--menu-width);
 }
 
 .main-img {
@@ -189,7 +189,7 @@ h3 {
 }
 
 .profile-img {
-    width: 35%;
+    max-width: 35%;
 }
 
 .profile-text {
@@ -264,6 +264,20 @@ h3 {
     transform: translateY(0.1em);
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 20%;
+}
+
+textarea {
+    width: 40%;
+}
+
 footer {
     background-color: var(--primary-background-color);
     color: var(--primary-font-color);
@@ -271,4 +285,10 @@ footer {
     height: var(--footer-height);
     margin-top: var(--space-xx-large);
     place-items: center;
+}
+
+@media (max-width: 376px) {
+    .header-right {
+        display: none;
+    }
 }
