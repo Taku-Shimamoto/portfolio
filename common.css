@@ -143,7 +143,6 @@ h1 span:last-child {
 
 h2 {
     color: var(--primary-font-color);
-    font-size: var(--font-size-xxx-large);
     letter-spacing: 0.15em;
     right: 10%;
     position: absolute;
@@ -153,6 +152,13 @@ h2 {
 
 h2 span {
     display: block;
+}
+
+h2 span:first-of-type {
+    font-size: var(--font-size-xxx-large);
+}
+
+h2 span:last-of-type {
     font-size: var(--font-size-xx-large);
 }
 
@@ -217,11 +223,11 @@ h3 {
 }
 
 .work {
-    width: var(--work-width);
+    max-width: var(--work-width);
 }
 
 .work-img {
-    max-width: 80%;
+    max-width: 100%;
     transition:
         border-radius var(--duration-long),
         transform var(--duration-long);
@@ -253,6 +259,7 @@ h3 {
     margin: var(--space-small) 0;
     padding: var(--space-x-small) var(--space-small);
     transition: opacity var(--duration-medium);
+    width: fit-content;
 }
 
 .button:hover {
@@ -271,11 +278,16 @@ form {
 
 input[type="text"],
 input[type="email"] {
-    width: 20%;
+    border-radius: var(--border-radius-base);
+    border-width: 1px;
+    padding: 4px;
+    max-width: 20%;
 }
 
 textarea {
-    width: 40%;
+    border-radius: var(--border-radius-base);
+    padding: var(--space-x-small);
+    max-width: 40%;
 }
 
 footer {
@@ -290,5 +302,23 @@ footer {
 @media (max-width: 376px) {
     .header-right {
         display: none;
+    }
+
+    .profile-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .profile-img {
+        max-width: 100%;
+    }
+
+    form {
+        margin: 0 var(--space-x-small);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
     }
 }

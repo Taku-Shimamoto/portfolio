@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="common.js"></script>
         <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">emailjs.init("M7lsRNOhtjGfwPgjN")</script>
         <title>Taku Shimamoto's Portfolio</title>
     </head>
     <body>
@@ -26,7 +28,10 @@
             </nav>
         </header>
         <div class="main-img">
-            <h2>Taku Shimamoto<span>No workout, no life.</span></h2>
+            <h2>
+                <span>Taku Shimamoto</span>
+                <span>No workout, no life.</span>
+            </h2>
         </div>
         <main>
             <section>
@@ -94,18 +99,40 @@
             <section>
                 <h3 id="contact">Contact</h3>
                 <i class="fa-regular fa-envelope"></i>handstone1015@gmail.com
-                <form id="contact_form">
-                    <label for="name">名前:</label>
-                    <input type="text" id="name" name="name" placeholder="あなたの名前" autocomplete="name"/>
-                    <label for="address">メールアドレス:</label>
-                    <input type="email" id="address" name="address" placeholder="Eメールアドレス" autocomplete="email"/>
-                    <label for="content">お伝えしたい内容:</label>
-                    <textarea id="content" name="content" placeholder="お伝えしたい内容をご記入ください" rows="8"></textarea>
-                </form>
+            <form id="contact_form">
+                <label for="name">お名前:</label>
+                <input type="text" name="name" id="name" autocomplete="name" />
+                <label for="email">Eメールアドレス: </label>
+                <input type="text" name="email" id="email" autocomplete="email" />
+                <label for="message">お問い合わせ内容:</label>
+                <textarea name="message" id="message" rows="8"></textarea>
+                <input type="submit" id="submit_button" class="button" value="Send Email" />
+            </form>
             </section>
         </main>
         <footer>
             Copyright &copy; 2026 Taku Shimamoto
         </footer>
     </body>
+    <script>
+        const submitButton = document.getElementById("submit_button");
+
+        document.getElementById("contact_form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            submitButton.value = "Sending...";
+
+            const serviceID = "default_service";
+            const templateID = "template_nhg8s9f";
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    submitButton.value = "Send Email";
+                    alert("Sent!");
+                }, (err) => {
+                    submitButton.value = "Send Email";
+                    alert(JSON.stringify(err));
+            });
+        });
+    </script>
 </html>
