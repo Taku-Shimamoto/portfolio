@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="../common.css" />
+        <meta charset= "UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../common.js" defer></script>
+        <title>Taku Shimamoto's Portfolio</title>
+    </head>
+    <style>
+        img {
+            width: 40%;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        .card {
+            border-radius: 8px;
+            padding: 8px;
+            width: 40%;
+        }
+
+        .card:nth-of-type(1) {
+            background-color: #ccf;
+        }
+
+        .card:nth-of-type(2) {
+            background-color: #fcc;
+        }
+
+        .card:nth-of-type(3) {
+            background-color: #cfc;
+        }
+
+        .card:nth-of-type(4) {
+            background-color: #ffc;
+        }
+    </style>
+    <body>
+        <header>
+            <h1 class="header-left">
+                    <a href="../index.html">
+                        <span>Taku</span>
+                        <span>Shimamoto</span>
+                    </a>
+                </h1>
+            <nav class="header-right">
+                <ul class="menu-list">
+                    <li class="menu"><a href="#">Top</a></li>
+                    <li class="menu"><a href="../index.html#profile">Profile</a></li>
+                    <li class="menu"><a href="../index.html#works">Works</a></li>
+                    <li class="menu"><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-img">
+            <h2>
+                <span>Works</span>
+                <span>HTML & CSS / JavaScript / PHP & MySQL</span>
+            </h2>
+        </div>
+        <main>
+            <h3 id="piano">Piano</h3>
+            <a href="piano.html">
+                <img src="../images/piano.png" alt="" />
+            </a>
+            <div class="card-wrapper">
+                <div class="card">
+                    <h4>作品名: 自動演奏ピアノアプリ</h4>
+                    <p>使用言語: HTML & CSS / JavaScript</p>
+                </div>
+                <div class="card">
+                    <h4>制作目的</h4>
+                </div>
+                <div class="card">
+                    <h4>特徴</h4>
+                </div>
+                <div class="card">
+                    <h4>工夫した点</h4>
+                </div>
+            </div>
+        </main>
+        <footer>
+            Copyright &copy; 2026 Taku Shimamoto
+        </footer>
+    </body>
+</html>

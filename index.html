@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="common.css" />
         <meta charset= "UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="common.js"></script>
+        <script src="common.js" defer></script>
         <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script type="text/javascript">emailjs.init("M7lsRNOhtjGfwPgjN")</script>
@@ -75,19 +75,19 @@
                 <div class="contents-block">
                     <div class="works-wrapper">
                         <div class="work">
-                            <a href="works/portfolio.html">
+                            <a href="works/index.html#portfolio">
                                 <img class="work-img" src="images/portfolio.png" alt="portfolio" />
                                 <h4>Taku Shimamoto's Portfolio</h4>
                             </a>
                         </div>
                         <div class="work">
-                            <a href="works/ui_dictionary.html">
+                            <a href="works/index.html#ui_dictionary">
                                 <img class="work-img" src="images/ui_dictionary.png" alt="UI Dictionary" />
                                 <h4>UI Dictionary</h4>
                             </a>
                         </div>
                         <div class="work">
-                            <a href="works/ec_site.html">
+                            <a href="works/index.html#ec_site">
                                 <img class="work-img" src="images/ec_site.png" alt="Sports Club Handstone EC Site" />
                                 <h4>Sports Club Handstone EC Site</h4>
                             </a>
@@ -114,25 +114,4 @@
             Copyright &copy; 2026 Taku Shimamoto
         </footer>
     </body>
-    <script>
-        const submitButton = document.getElementById("submit_button");
-
-        document.getElementById("contact_form").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            submitButton.value = "Sending...";
-
-            const serviceID = "default_service";
-            const templateID = "template_nhg8s9f";
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    submitButton.value = "Send Email";
-                    alert("Sent!");
-                }, (err) => {
-                    submitButton.value = "Send Email";
-                    alert(JSON.stringify(err));
-            });
-        });
-    </script>
 </html>
