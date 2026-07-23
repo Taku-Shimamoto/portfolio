@@ -3,7 +3,7 @@
     --border-bottom: 1px;
     --border-left: 8px;
     --border-radius-base: 8px;
-    --font-family-primary: "sans-serif";
+    --font-family-primary: sans-serif;
     --font-family-secondary: "Times New Roman";
     --footer-height: 80px;
     --header-height: 64px;
@@ -166,8 +166,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-inline: auto;
-    margin-top: var(--header-height);
+    margin: var(--header-height) auto 0 auto;
     max-width: var(--page-width);
     padding: 0 var(--space-x-small);
 }
@@ -176,7 +175,7 @@ h3 {
     border-bottom: var(--border-bottom) solid var(--border-bottom-color);
     border-left: var(--border-left) solid var(--border-left-color);
     font-size: var(--font-size-x-large);
-    margin: var(--space-medium) 0;
+    margin: var(--space-xx-large) 0 var(--space-medium) 0;
     padding: 0 0 var(--space-x-small) var(--space-small);
 }
 

@@ -2,12 +2,11 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>最終課題</title>
+        <link rel="stylesheet" href="../common.css" />
+        <title>自動演奏ピアノアプリ</title>
     </head>
-    <body>
         <style>
             body {
-                caret-color: transparent;
                 font-family: sans-serif;
                 margin: 0;
                 padding: 0;
@@ -17,7 +16,7 @@
                 background-color: #000;
                 border-radius: 50% 100% 0 0;
                 height: 300px;
-                margin: 20px auto 0 auto;
+                margin: 84px auto 0 auto;
                 width: 600px;
             }
 
@@ -176,6 +175,23 @@
                 pointer-events: none;
             }
         </style>
+    <body>
+        <header>
+            <h1 class="header-left">
+                    <a href="../index.html">
+                        <span>Taku</span>
+                        <span>Shimamoto</span>
+                    </a>
+                </h1>
+            <nav class="header-right">
+                <ul class="menu-list">
+                    <li class="menu"><a href="#">Top</a></li>
+                    <li class="menu"><a href="../index.html#profile">Profile</a></li>
+                    <li class="menu"><a href="../index.html#works">Works</a></li>
+                    <li class="menu"><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
         <div class="top-lid">
             <div id="title" class="title"></div>
             <div id="current_sound" class="current-sound"></div>

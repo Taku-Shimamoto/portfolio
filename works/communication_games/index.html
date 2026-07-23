@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="../../common.css" />
+        <meta charset= "UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Taku Shimamoto's Portfolio</title>
+    </head>
+    <style>
+        * {
+            scroll-padding-top: 64px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        section > .container > a {
+            display: block;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        section > .container > a img {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            margin-bottom: 24px;
+            transition: opacity .5s;
+        }
+
+        img:hover {
+            opacity: .6;
+        }
+    </style>
+    <body>
+        <header>
+            <h1 class="header-left">
+                    <a href="../../index.html">
+                        <span>Taku</span>
+                        <span>Shimamoto</span>
+                    </a>
+                </h1>
+            <nav class="header-right">
+                <ul class="menu-list">
+                    <li class="menu"><a href="#">Top</a></li>
+                    <li class="menu"><a href="../../index.html#profile">Profile</a></li>
+                    <li class="menu"><a href="../../index.html#works">Works</a></li>
+                    <li class="menu"><a href="../../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-img">
+            <h2>
+                <span>Communication Game Apps</span>
+                <span>My Selection</span>
+            </h2>
+        </div>
+        <main>
+            <section>
+                <h3 id="cooperative">協力 / 非協力 ゲーム</h3>
+                <div class="container">
+                    <a href="cooperative.html">
+                        <img src="../../images/cooperative.jpg" alt="協力 / 非協力 ゲーム" />
+                    </a>
+                    <div class="rule">
+                        遊び方
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 id="othello">アキネーターオセロ</h3>
+                <a href="othello.html">
+                    <img src="../../images/othello.jpg" alt="アキネーターオセロ" />
+                </a>
+            </section>
+            <section>
+                <h3 id="draft">ドラフトしりとリレー</h3>
+            </section>
+            <section>
+                <h3 id="nyancensus">にゃんセンサスゲーム</h3>
+            </section>
+        </main>
+    </body>
+</html>

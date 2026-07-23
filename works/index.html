@@ -4,12 +4,31 @@
         <link rel="stylesheet" href="../common.css" />
         <meta charset= "UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="../common.js" defer></script>
         <title>Taku Shimamoto's Portfolio</title>
     </head>
     <style>
-        img {
+        * {
+            scroll-padding-top: 64px;
+        }
+
+        section > a {
+            display: block;
             width: 40%;
+            margin: 0 auto;
+        }
+
+        section > a img {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            margin-bottom: 24px;
+            transition: opacity .5s;
+        }
+
+        img:hover {
+            opacity: .6;
         }
 
         .card-wrapper {
@@ -22,8 +41,19 @@
 
         .card {
             border-radius: 8px;
+            box-shadow: 0 2px 4px #ccc;
             padding: 8px;
-            width: 40%;
+            width: 33%;
+        }
+
+        .card p {
+            font-size: 14px;
+            text-align: justify;
+            padding: 8px;
+        }
+
+        .card p span {
+            text-decoration: line-through;
         }
 
         .card:nth-of-type(1) {
@@ -40,6 +70,45 @@
 
         .card:nth-of-type(4) {
             background-color: #ffc;
+        }
+
+        .tag {
+            border-radius: 50px;
+            cursor: default;
+            font-family: sans-serif;
+            font-size: 12px;
+            padding: 2px 4px;
+            vertical-align: middle;
+        }
+
+        .html {
+            background-color: #ccf;
+        }
+
+        .css {
+            background-color: #fcc;
+        }
+
+        .javascript {
+            background-color: #cfc;
+        }
+
+        .php {
+            background-color: #ffc;
+        }
+
+        .mysql {
+            background-color: #fcf;
+        }
+
+        .others {
+            background-color: #ddd;
+        }
+
+        ol, ul {
+            font-size: 14px;
+            margin-top: 8px;
+            padding-inline-start: 24px;
         }
     </style>
     <body>
@@ -66,25 +135,236 @@
             </h2>
         </div>
         <main>
-            <h3 id="piano">Piano</h3>
-            <a href="piano.html">
-                <img src="../images/piano.png" alt="" />
-            </a>
-            <div class="card-wrapper">
-                <div class="card">
-                    <h4>作品名: 自動演奏ピアノアプリ</h4>
-                    <p>使用言語: HTML & CSS / JavaScript</p>
+            <section>
+                <h3 id="piano">
+                    Piano
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag javascript">JavaScript</span>
+                </h3>
+                <a href="piano.html">
+                    <img src="../images/piano.png" alt="自動演奏ピアノアプリ" />
+                </a>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h4>作品名: 自動演奏ピアノアプリ</h4>
+                        <p>
+                            手動演奏機能と自動演奏機能をもつ簡易的なピアノアプリです。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>制作目的</h4>
+                        <p>
+                            関数・DOM操作・イベントリスナー・タイマーIDについて学習し、学習内容の定着および応用として、自動演奏機能のついたピアノアプリを制作しました。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>工夫した点</h4>
+                        <p>
+                            本物のピアノを弾いている感覚を味わってもらうため、グランドピアノをイメージしたデザインにし、ピアノ音源を使用しました。
+                        </p>
+                        <p>
+                            ピアノ経験者も、初めてピアノを演奏する人も安心してお使いいただけるよう、鍵盤の音名表示 ON / OFF を常に切り替えられるようになっています。また、鳴っている音の鍵盤がハイライトするようになっているので、指使いを学習する目的でもお使いいただけます。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>操作方法</h4>
+                        <ol>
+                            <li>
+                                手動演奏機能
+                                <p>
+                                    鍵盤を押すと音が鳴り、鳴っている音が画面上部の音名表示エリアに表示されます。
+                                </p>
+                            </li>
+                            <li>
+                                自動演奏機能
+                                <p>
+                                    「自動演奏」ボタンを押すと、収録されている楽曲の中から1曲をランダムに選択し、自動で演奏します。自動演奏は「演奏中止」ボタンを押すか最後まで演奏されると止まります。
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>制作目的</h4>
+            </section>
+            <section>
+                <h3 id="ui_dictionary">
+                    UI Dictionary
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag javascript">JavaScript</span>
+                    <span class="tag others">GitHub</span>
+                </h3>
+                <a href="../../UI_dictionary/index.html">
+                    <img src="../images/ui_dictionary.png" alt="UI Dictionary" />
+                </a>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h4>作品名: UI Dictionary</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>制作目的</h4>
+                        <ol>
+                            <li>UI学習</li>
+                            <li>Web制作環境・利用者同士の共同開発環境の構築</li>
+                            <li>学習内容の還元</li>
+                        </ol>
+                    </div>
+                    <div class="card">
+                        <h4>工夫した点</h4>
+                        <p>
+                            単なるUIサンプル集にならないよう、
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>利用方法</h4>
+                        <p>
+                            気になるUIがあったら、そのページにアクセスします。
+                        </p>
+                        <p>
+                            実際に触れてみて効果を確かめてみてください。ページ内のCopyボタンを押すと、コードをコピーすることができます。コピーしたコードをHTMLファイルにペーストすることで、そのままお使いいただけます。
+                        </p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>特徴</h4>
+            </section>
+            <section>
+                <h3 id="portfolio">
+                    Taku Shimamoto's Portfolio
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag javascript">JavaScript</span>
+                </h3>
+                <a href="../index.html">
+                    <img src="../images/portfolio.png" alt="Portfolio" />
+                </a>
+                <div class="card-wrapper">
+                    <div class="card">
+
+                    </div>
+                    <div class="card">
+                        
+                    </div>
+                    <div class="card">
+                        
+                    </div>
+                    <div class="card">
+                        
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>工夫した点</h4>
+            </section>
+            <section>
+                <h3 id="ec_site">
+                    Sports Club Handstone EC Site
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag javascript">JavaScript</span>
+                    <span class="tag php">PHP</span>
+                    <span class="tag mysql">MySQL</span>
+                </h3>
+                <a href="https://portfolio02.dc-itex.com/hachioji/0010/ec_site/index.php">
+                    <img src="../images/ec_site.png" alt="EC Site" />
+                </a>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h4>作品名: Sports Club Handstone EC Site</h4>
+                        <p>
+                            PHPとMySQLのデータベースを使用して、架空のプロテイン専門販売サイトを制作しました。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>制作目的</h4>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>工夫した点</h4>
+                        <p>
+                            <span>遊び心</span>こだわり満載の商品ラインナップで、SNSでバズること間違いなし！？
+                        </p>
+                        <p>
+                            クーポンコード入力による割引機能、商品検索機能、購入バッジでカート内の商品数が一目で分かる機能など、ユーザー目線で欲しい機能を盛り込んでいます。
+                        </p>
+                        <p>
+                            加えて、フォームの二重バリデーション、ログイン時のセッション再発行、SQLインジェクション対策、XSS対策、パスワードハッシュ化、CSRFトークンなどのセキュリティ対策を施しています。さらに悲観的ロックによる排他制御によりデータの整合性を保てるようにも設計されています。
+                        </p>
+                        <p>
+                            私のイチ押し商品は「桃色&#9825;肩重い」味！
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>利用方法</h4>
+                        <ol>
+                            <li>
+                                新規登録・ログイン
+                                <p>
+                                    「新規登録」ページにて任意のユーザーIDとパスワードを登録しユーザー登録を行います。
+                                </p>
+                            </li>
+                            <li>
+                                商品の閲覧
+                                <p>
+                                    気になる商品がありましたら、「カートに入れる」ボタンを押してカートに入れてみましょう。
+                                </p>
+                            </li>
+                            <li>
+                                購入手続き
+                                <p>
+                                    「購入する」ボタンを押すと、購入が完了します。<br />
+                                    ※ 架空サイトのため、実際に金銭が発生することはありません。
+                                </p>
+                                <p>
+                                    クーポンコードを入力すると、割引を適用することができます。
+                                </p>
+                                    <ul>
+                                        <li>SHIMAMOTO: ¥1,000OFF</li>
+                                        <li>HANDSTONE: ¥1,000OFF</li>
+                                        <li>ほか、その月のクーポン(詳しくはサイト内で案内しています)を使用することができます。</li>
+                                    </ul>
+                                <p>
+                                    クーポンは1ユーザーにつき1回のみ使用できます。
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
+            </section>
+            <section>
+                <h3 id="communication_game">
+                    Communication Game Apps
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag javascript">JavaScript</span>
+                </h3>
+                <a href="communication_games/index.html">
+                    <img src="../images/communication_game.png" alt="画像ないのでとりあえずテキスト" />
+                </a>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h4>作品名: Communication Game Apps</h4>
+                        <p>
+                            「コミュニケーション」×「ゲーム」をコンセプトに、利用者間の交流・親睦を深めるイベントを毎週行っています。実施したイベントのうち、特に人気のあったものを数種類ピックアップしました。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>制作目的</h4>
+                        <p>
+                            有志活動としてコミュニケーションゲームの企画・運営を行っています。UI Dictionary(上述)の制作経験を経て、「自身が制作したものを通じて、より多くの利用者に充実した参加体験を持ってほしい」と思うようになりました。
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h4>工夫した点</h4>
+                    </div>
+                    <div class="card">
+                        <h4>遊び方・ルールなど</h4>
+                        <p>
+                            詳細ページにて詳しくご覧いただけます。もし気になるゲームがありましたら、ぜひ遊んでみてください！
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
             Copyright &copy; 2026 Taku Shimamoto
