@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <link rel="stylesheet" href="../../common.css" />
-        <meta charset= "UTF-8" />
+        <link rel="stylesheet" href="../../css/common.css" />
+        <link rel="stylesheet" href="../../css/communication_games.css" />
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Taku Shimamoto's Portfolio</title>
     </head>
-    <style>
-        * {
-            scroll-padding-top: 64px;
-        }
-
-        .container {
-            display: flex;
-        }
-
-        section > .container > a {
-            display: block;
-            width: 30%;
-            margin: 0 auto;
-        }
-
-        section > .container > a img {
-            display: block;
-            width: 100%;
-        }
-
-        img {
-            margin-bottom: 24px;
-            transition: opacity .5s;
-        }
-
-        img:hover {
-            opacity: .6;
-        }
-    </style>
     <body>
         <header>
             <h1 class="header-left">
@@ -63,18 +35,80 @@
                 <h3 id="cooperative">協力 / 非協力 ゲーム</h3>
                 <div class="container">
                     <a href="cooperative.html">
-                        <img src="../../images/cooperative.jpg" alt="協力 / 非協力 ゲーム" />
+                        <img class="work-img" src="../../images/cooperative.jpg" alt="協力 / 非協力 ゲーム" />
                     </a>
                     <div class="rule">
-                        遊び方
+                        <ol>
+                            <li>
+                                ゲーム概要
+                                <p>
+                                    あなたは小さな町工場ではたらく社員。工場には古い機械が一つだけあり、常にだれかが稼働させないと故障してしまう。
+                                </p>
+                                <p>
+                                    製品の納期が10日後に迫る中、工場長から「働き方改革により、有給休暇を取得せよ」との通達が。
+                                </p>
+                                <p>
+                                    社員たちは、機械の稼働を止めることなく、有給休暇を取得しながら納期に間に合わせなけれなならない―――。
+                                </p>
+                            </li>
+                            <li>
+                                遊び方・ルールなど
+                                <ul>
+                                    <li>推奨人数: 1チーム3～5人</li>
+                                    <li>各プレイヤーは「協力」「非協力」のどちらかを選んで投票します。「協力」「非協力」の投票数によって「機械の稼働ステータス」に変動が起こります。</li>
+                                    <li>機械の稼働ステータスは「-3」～「+3」の間で変動し、「-3」を下回ると「故障」となります。</li>
+                                    <li>機械が故障した場合、そのターンの初めからやり直しになり、各プレイヤーは故障回数に応じた減点を受けます。</li>
+                                    <li>10ターン経過後、<span class="bold">もっとも「非協力」に投票したプレイヤー</span>(つまり、休暇を取得したプレイヤー)が勝利となります。</li>
+                                </ul>
+                            </li>
+                            <li>
+                                作者コメント
+                                <p>
+                                    このゲームは「協力」しながら「駆け引き」が求められるという、とても新しい感覚のゲームです。「機械を故障させない」という共通の目的がありながら、「1回でも多く非協力に投票する」という個別の目標があるからです。
+                                </p>
+                                <p>
+                                    機械が故障しそうになったら協力を呼び掛けて稼働ステータスを戻さなければいけませんが、そこで相手の出方をうかがいながら、いかに「非協力」を選んで点数を稼いでいくか、その駆け引きがとても面白いです。
+                                </p>
+                                <p>
+                                    ちなみに私は欲をかきすぎて、機械を2回も故障させてしまいました...。最後に勝つのは協力すべき場面でしっかりと「協力」に投票できる人なのかもしれません。
+                                </p>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </section>
             <section>
                 <h3 id="othello">アキネーターオセロ</h3>
-                <a href="othello.html">
-                    <img src="../../images/othello.jpg" alt="アキネーターオセロ" />
-                </a>
+                <div class="container">
+                    <a href="othello.html">
+                        <img class="work-img" src="../../images/othello.jpg" alt="アキネーターオセロ" />
+                    </a>
+                    <div class="rule">
+                        <ol>
+                            <li>
+                                ゲーム概要
+                                <p>
+                                    「質問力」×「オセロ」が夢の共演！
+                                </p>
+                                <p>
+                                    マスを取るためには、Yes / No クエスチョン(クローズドクエスチョン)と Yes / No で答えられない質問(オープンクエスチョン)を使い分け、お題を当てなければいけません。
+                                </p>
+                                <p>
+                                    しかも、四隅はとても難易度の高い「水平思考クイズ」をクリアしなければ取ることはできない。
+                                </p>
+                                <p>
+                                    質問力・オセロの実力・水平思考力。あらゆる力を集結させ、勝利をつかむのはどちらのチームだ！？
+                                </p>
+                            </li>
+                            <li>
+                                遊び方・ルールなど
+                            </li>
+                            <li>
+                                作者コメント
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </section>
             <section>
                 <h3 id="draft">ドラフトしりとリレー</h3>

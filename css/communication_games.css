@@ -1,0 +1,27 @@
+@import url(variables.css);
+@import url(works.css);
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+section > .container > a {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+}
+
+section > .container > a img {
+    display: block;
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding-inline-start: var(--space-medium);
+}
+
+.bold {
+    font-weight: bold;
+}

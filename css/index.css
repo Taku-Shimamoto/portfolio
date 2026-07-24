@@ -1,0 +1,119 @@
+@import url(variables.css);
+
+.contents-block {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-wrapper,
+.works-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-medium);
+    justify-content: center;
+}
+
+.profile-img {
+    max-width: 35%;
+}
+
+.profile-text {
+    font-size: var(--font-size-small);
+    line-height: 200%;
+}
+
+.career p,
+.skills li {
+    line-height: normal;
+}
+
+.career p {
+    margin-left: var(--space-x-small);
+}
+
+.skills ul {
+    padding-inline-start: var(--space-large);
+}
+
+.works-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.work {
+    max-width: var(--work-width);
+}
+
+.work a {
+    color: var(--secondary-font-color);
+}
+
+.work a:hover {
+    text-decoration-color: var(--secondary-font-color);
+}
+
+.button {
+    background-color: var(--button-background);
+    border: none;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 0.1em var(--button-shadow);
+    color: var(--primary-font-color);
+    cursor: pointer;
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    margin: var(--space-small) 0;
+    padding: var(--space-x-small) var(--space-small);
+    transition: opacity var(--duration-medium);
+    width: fit-content;
+}
+
+.button:hover {
+    opacity: var(--opacity-base);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0.1em);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"] {
+    border-radius: var(--border-radius-base);
+    border-width: var(--border-width-base);
+    padding: var(--space-x-small);
+    max-width: 20%;
+}
+
+textarea {
+    border-radius: var(--border-radius-base);
+    padding: var(--space-x-small);
+    max-width: 40%;
+}
+
+@media (max-width: 376px) {
+    .profile-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .profile-img {
+        max-width: 100%;
+    }
+
+    form {
+        margin: 0 var(--space-x-small);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
+}

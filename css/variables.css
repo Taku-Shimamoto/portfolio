@@ -1,0 +1,53 @@
+:root {
+    /* layout */
+    --border-width-base: 1px;
+    --border-left: 8px;
+    --border-radius-base: 8px;
+    --border-radius-large: 16px;
+    --border-radius-max: 50px;
+    --font-family-primary: sans-serif;
+    --font-family-secondary: "Times New Roman";
+    --footer-height: 80px;
+    --header-height: 64px;
+    --menu-width: 80px;
+    --opacity-base: .6;
+    --page-width: 1280px;
+    --work-width: 600px;
+
+    /* color */
+    --border-bottom-color: #ccc;
+    --border-left-color: #aaa;
+    --button-background: #0a0;
+    --button-shadow: #080;
+    --primary-background-color: #00a;
+    --primary-font-color: #fff;
+    --secondary-font-color: #000;
+    --light-color-fisrt: #ccf;
+    --light-color-second: #fcc;
+    --light-color-third: #cfc;
+    --light-color-fourth: #ffc;
+    --light-color-fifth: #fcf;
+    --light-color-sixth: #ddd;
+
+    /* font-size */
+    --font-size-x-small: 12px;
+    --font-size-small: 14px;
+    --font-size-base: 16px;
+    --font-size-large: 20px;
+    --font-size-x-large: 24px;
+    --font-size-xx-large: 32px;
+    --font-size-xxx-large: 64px;
+
+    /* animation-duration */
+    --duration-short: .2s;
+    --duration-medium: .5s;
+    --duration-long: .8s;
+
+    /* spacing */
+    --space-x-small: 8px;
+    --space-small: 16px;
+    --space-medium: 24px;
+    --space-large: 32px;
+    --space-x-large: 40px;
+    --space-xx-large: 80px;
+}

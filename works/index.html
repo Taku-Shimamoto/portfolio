@@ -1,116 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <link rel="stylesheet" href="../common.css" />
-        <meta charset= "UTF-8" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/works.css" />
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Taku Shimamoto's Portfolio</title>
     </head>
-    <style>
-        * {
-            scroll-padding-top: 64px;
-        }
-
-        section > a {
-            display: block;
-            width: 40%;
-            margin: 0 auto;
-        }
-
-        section > a img {
-            display: block;
-            width: 100%;
-        }
-
-        img {
-            margin-bottom: 24px;
-            transition: opacity .5s;
-        }
-
-        img:hover {
-            opacity: .6;
-        }
-
-        .card-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            max-width: 100%;
-        }
-
-        .card {
-            border-radius: 8px;
-            box-shadow: 0 2px 4px #ccc;
-            padding: 8px;
-            width: 33%;
-        }
-
-        .card p {
-            font-size: 14px;
-            text-align: justify;
-            padding: 8px;
-        }
-
-        .card p span {
-            text-decoration: line-through;
-        }
-
-        .card:nth-of-type(1) {
-            background-color: #ccf;
-        }
-
-        .card:nth-of-type(2) {
-            background-color: #fcc;
-        }
-
-        .card:nth-of-type(3) {
-            background-color: #cfc;
-        }
-
-        .card:nth-of-type(4) {
-            background-color: #ffc;
-        }
-
-        .tag {
-            border-radius: 50px;
-            cursor: default;
-            font-family: sans-serif;
-            font-size: 12px;
-            padding: 2px 4px;
-            vertical-align: middle;
-        }
-
-        .html {
-            background-color: #ccf;
-        }
-
-        .css {
-            background-color: #fcc;
-        }
-
-        .javascript {
-            background-color: #cfc;
-        }
-
-        .php {
-            background-color: #ffc;
-        }
-
-        .mysql {
-            background-color: #fcf;
-        }
-
-        .others {
-            background-color: #ddd;
-        }
-
-        ol, ul {
-            font-size: 14px;
-            margin-top: 8px;
-            padding-inline-start: 24px;
-        }
-    </style>
     <body>
         <header>
             <h1 class="header-left">
@@ -131,7 +27,7 @@
         <div class="main-img">
             <h2>
                 <span>Works</span>
-                <span>HTML & CSS / JavaScript / PHP & MySQL</span>
+                <span>HTML<br /> CSS <br /> JavaScript <br /> PHP <br /> MySQL</span>
             </h2>
         </div>
         <main>
@@ -143,7 +39,7 @@
                     <span class="tag javascript">JavaScript</span>
                 </h3>
                 <a href="piano.html">
-                    <img src="../images/piano.png" alt="自動演奏ピアノアプリ" />
+                    <img class="work-img" src="../images/piano.png" alt="自動演奏ピアノアプリ" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
@@ -195,7 +91,7 @@
                     <span class="tag others">GitHub</span>
                 </h3>
                 <a href="../../UI_dictionary/index.html">
-                    <img src="../images/ui_dictionary.png" alt="UI Dictionary" />
+                    <img class="work-img" src="../images/ui_dictionary.png" alt="UI Dictionary" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
@@ -237,7 +133,7 @@
                     <span class="tag javascript">JavaScript</span>
                 </h3>
                 <a href="../index.html">
-                    <img src="../images/portfolio.png" alt="Portfolio" />
+                    <img class="work-img" src="../images/portfolio.png" alt="Portfolio" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
@@ -264,7 +160,7 @@
                     <span class="tag mysql">MySQL</span>
                 </h3>
                 <a href="https://portfolio02.dc-itex.com/hachioji/0010/ec_site/index.php">
-                    <img src="../images/ec_site.png" alt="EC Site" />
+                    <img class="work-img" src="../images/ec_site.png" alt="EC Site" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
@@ -339,7 +235,7 @@
                     <span class="tag javascript">JavaScript</span>
                 </h3>
                 <a href="communication_games/index.html">
-                    <img src="../images/communication_game.png" alt="画像ないのでとりあえずテキスト" />
+                    <img class="work-img" src="../images/communication_game.png" alt="画像ないのでとりあえずテキスト" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
