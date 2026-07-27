@@ -3,18 +3,43 @@
 
 .container {
     display: flex;
+    gap: var(--space-x-small);
     margin: 0 auto;
 }
 
-section > .container > a {
+.poster {
+    align-self: flex-start;
     display: block;
     margin: 0 auto;
-    max-width: 30%;
+    position: relative;
+    width: 25%;
 }
 
-section > .container > a img {
+.poster a img {
     display: block;
     width: 100%;
+}
+
+img.unpublished {
+    cursor: default;
+    opacity: var(--opacity-unpublished);
+    pointer-events: none;
+}
+
+.unpublished-label {
+    font-size: var(--font-size-large);
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    top: 50%;
+}
+
+.rule {
+    width: 75%;
+}
+
+.rule p {
+    font-size: var(--font-size-small);
 }
 
 ul {

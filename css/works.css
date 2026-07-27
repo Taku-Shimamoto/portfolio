@@ -1,7 +1,7 @@
 @import url(variables.css);
 
 section > a {
-    display: block;
+    display: inline-block;
     width: 40%;
     margin: 0 auto;
 }
@@ -11,15 +11,12 @@ section > a img {
     width: 100%;
 }
 
-img {
-    margin-bottom: var(--space-medium);
-}
-
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-small);
     justify-content: center;
+    margin-top: var(--space-medium);
     max-width: 100%;
 }
 
