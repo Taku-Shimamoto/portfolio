@@ -50,3 +50,32 @@ ul {
 .bold {
     font-weight: bold;
 }
+
+.detail-link {
+    margin-top: var(--space-small);
+}
+
+.detail-link {
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--font-size-small);
+    padding: var(--space-x-small) var(--space-small);
+    border-radius: var(--border-radius-max);
+    background: var(--detail-link-background);
+    transition: var(--duration-short);
+}
+
+.detail-link:hover{
+    transform:translateX(var(--space-x-small));
+}
+
+@media (max-width: 376px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .poster,
+    .rule {
+        width: 100%;
+    }
+}

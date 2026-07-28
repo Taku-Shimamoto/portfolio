@@ -32,10 +32,6 @@
     margin-left: var(--space-x-small);
 }
 
-.skills ul {
-    padding-inline-start: var(--space-large);
-}
-
 .works-wrapper {
     flex-wrap: wrap;
     justify-content: center;

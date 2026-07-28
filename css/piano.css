@@ -1,25 +1,30 @@
 @import url(variables.css);
 
-body {
-                font-family: sans-serif;
-                margin: 0;
-                padding: 0;
-            }
+:root {
+    --piano-color: #000;
+    --piano-width: 600px;
+    --top-lid-height: 300px;
+    --title-height: 16px;
+}
 
-            .top-lid {
-                background-color: #000;
-                border-radius: 50% 100% 0 0;
-                height: 300px;
-                margin: 84px auto 0 auto;
-                width: 600px;
-            }
+.breadcrumb-list {
+    margin-top: var(--header-height);
+}
 
-            .title {
-                color: #fff;
-                height: 16px;
-                margin-left: 60px;
-                padding-top: 30px;
-            }
+.top-lid {
+    background-color: var(--piano-color);
+    border-radius: 50% 100% 0 0;
+    height: var(--top-lid-height);
+    margin: 0 auto;
+    width: var(--piano-width)
+}
+
+.title {
+    color: var(--primary-font-color);
+    height: var(--title-height);
+    margin-left: var(--space-xx-large);
+    padding-top: var(--space-large);
+}
 
             .keyboard {
                 background-color: #000;

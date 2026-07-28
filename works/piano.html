@@ -2,6 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../css/variables.css" />
         <link rel="stylesheet" href="../css/common.css" />
         <link rel="stylesheet" href="../css/piano.css" />
         <script src="../js/piano.js" defer></script>
@@ -24,31 +25,39 @@
                 </ul>
             </nav>
         </header>
-        <div class="top-lid">
-            <div id="title" class="title"></div>
-            <div id="current_sound" class="current-sound"></div>
-            <div class="border"></div>
-            <div class="buttons">
-                <input type="button" id="autoplay_button" class="btn autoplay" value="▶自動演奏" />
-                <input type="button" id="toggle_soundname_button" class="btn off" value="音名表示: OFF" />
+        <main>
+            <nav class="breadcrumb-list">
+                <a href="../index.html">Home</a> &lt; <a href=index.html>Works</a> &lt; ピアノアプリ
+            </nav>
+            <div class="top-lid">
+                <div id="title" class="title"></div>
+                <div id="current_sound" class="current-sound"></div>
+                <div class="border"></div>
+                <div class="buttons">
+                    <input type="button" id="autoplay_button" class="btn autoplay" value="▶自動演奏" />
+                    <input type="button" id="toggle_soundname_button" class="btn off" value="音名表示: OFF" />
+                </div>
             </div>
-        </div>
-        <div class="keyboard">
-            <div id="sounds" class="sounds">
-                <div id="do" class="natural"><p class="sound-name">ド</p></div>
-                <div id="sharp_do" class="sharp"><p class="sound-name">ド#</p></div>
-                <div id="re" class="natural"><p class="sound-name">レ</p></div>
-                <div id="sharp_re" class="sharp"><p class="sound-name">レ#</p></div>
-                <div id="mi" class="natural"><p class="sound-name">ミ</p></div>
-                <div id="fa" class="natural"><p class="sound-name">ファ</p></div>
-                <div id="sharp_fa" class="sharp"><p class="sound-name">ファ#</p></div>
-                <div id="so" class="natural"><p class="sound-name">ソ</p></div>
-                <div id="sharp_so" class="sharp"><p class="sound-name">ソ#</p></div>
-                <div id="ra" class="natural"><p class="sound-name">ラ</p></div>
-                <div id="sharp_ra" class="sharp"><p class="sound-name">ラ#</p></div>
-                <div id="si" class="natural"><p class="sound-name">シ</p></div>
-                <div id="higher_do" class="natural"><p class="sound-name">ド</p></div>
+            <div class="keyboard">
+                <div id="sounds" class="sounds">
+                    <div id="do" class="natural"><p class="sound-name">ド</p></div>
+                    <div id="sharp_do" class="sharp"><p class="sound-name">ド#</p></div>
+                    <div id="re" class="natural"><p class="sound-name">レ</p></div>
+                    <div id="sharp_re" class="sharp"><p class="sound-name">レ#</p></div>
+                    <div id="mi" class="natural"><p class="sound-name">ミ</p></div>
+                    <div id="fa" class="natural"><p class="sound-name">ファ</p></div>
+                    <div id="sharp_fa" class="sharp"><p class="sound-name">ファ#</p></div>
+                    <div id="so" class="natural"><p class="sound-name">ソ</p></div>
+                    <div id="sharp_so" class="sharp"><p class="sound-name">ソ#</p></div>
+                    <div id="ra" class="natural"><p class="sound-name">ラ</p></div>
+                    <div id="sharp_ra" class="sharp"><p class="sound-name">ラ#</p></div>
+                    <div id="si" class="natural"><p class="sound-name">シ</p></div>
+                    <div id="higher_do" class="natural"><p class="sound-name">ド</p></div>
+                </div>
             </div>
-        </div>
+        </main>
+        <footer>
+            Copyright &copy; 2026 Taku Shimamoto
+        </footer>
     </body>
 </html>

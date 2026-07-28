@@ -24,7 +24,7 @@ a {
 
 a:hover {
     font-weight: bold;
-    text-decoration-color: var(--primary-font-color);
+    text-decoration-color: inherit;
 }
 
 header {
@@ -121,9 +121,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: var(--header-height) auto 0 auto;
+    margin: 0 auto;
     max-width: var(--page-width);
     padding: 0 var(--space-x-small);
+}
+
+.breadcrumb-list {
+    font-size: var(--font-size-small);
 }
 
 h3 {
@@ -134,6 +138,7 @@ h3 {
     padding: 0 0 var(--space-x-small) var(--space-small);
 }
 
+ul,
 ol {
     padding-inline-start: var(--space-medium);
 }

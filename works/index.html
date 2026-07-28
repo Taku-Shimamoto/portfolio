@@ -27,10 +27,19 @@
         <div class="main-img">
             <h2>
                 <span>Works</span>
-                <span>HTML<br /> CSS <br /> JavaScript <br /> PHP <br /> MySQL</span>
+                <span>
+                    HTML<br />
+                    CSS<br />
+                    JavaScript<br /> 
+                    PHP<br />
+                    MySQL
+                </span>
             </h2>
         </div>
         <main>
+            <nav class="breadcrumb-list">
+                <a href="../index.html">Home</a> &lt; Works
+            </nav>
             <section>
                 <h3 id="piano">
                     Piano
@@ -51,7 +60,7 @@
                     <div class="card">
                         <h4>制作目的</h4>
                         <p>
-                            関数・DOM操作・イベントリスナー・タイマーIDについて学習し、学習内容の定着および応用として、自動演奏機能のついたピアノアプリを制作しました。
+                            関数・DOM操作・イベントリスナー・タイマーIDなどJavaScriptの基礎内容について学習し、学習内容の定着および応用として、自動演奏機能のついたピアノアプリを制作しました。
                         </p>
                     </div>
                     <div class="card">
@@ -97,28 +106,28 @@
                     <div class="card">
                         <h4>作品名: UI Dictionary</h4>
                         <p>
-
+                            よく使われるUIの作りかたや仕組みをまとめたサイトです。GitHubを使って複数人で制作・運営を行っています。
                         </p>
                     </div>
                     <div class="card">
                         <h4>制作目的</h4>
                         <ol>
                             <li>UI学習</li>
-                            <li>Web制作環境・利用者同士の共同開発環境の構築</li>
+                            <li>Web制作環境・共同開発環境の構築</li>
                             <li>学習内容の還元</li>
                         </ol>
                     </div>
                     <div class="card">
                         <h4>工夫した点</h4>
                         <p>
-                            単なるUIサンプル集にならないよう、
+                            単なるUIサンプル集にならないよう、実際のUIやコードコピーだけにとどめず、解説も掲載しています。
+                        </p>
+                        <p>
+                            また、紹介しているUIの一部はUI Dictionaryサイト内やECサイト内でも実際に使用し、自分で使用感を確かめています。
                         </p>
                     </div>
                     <div class="card">
                         <h4>利用方法</h4>
-                        <p>
-                            気になるUIがあったら、そのページにアクセスします。
-                        </p>
                         <p>
                             実際に触れてみて効果を確かめてみてください。ページ内のCopyボタンを押すと、コードをコピーすることができます。コピーしたコードをHTMLファイルにペーストすることで、そのままお使いいただけます。
                         </p>
@@ -137,16 +146,13 @@
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
-
+                        <h4>作品名: Taku Shimamoto's Portfolio</h4>
+                        <p>
+                            これまでの学習内容と成果物をまとめたポートフォリオサイトです。
+                        </p>
                     </div>
                     <div class="card">
-                        
-                    </div>
-                    <div class="card">
-                        
-                    </div>
-                    <div class="card">
-                        
+                        <h4>工夫した点</h4>
                     </div>
                 </div>
             </section>
@@ -166,13 +172,24 @@
                     <div class="card">
                         <h4>作品名: Sports Club Handstone EC Site</h4>
                         <p>
-                            PHPとMySQLのデータベースを使用して、架空のプロテイン専門販売サイトを制作しました。
+                            架空のプロテイン専門販売サイトです。
+                        </p>
+                        <ul>
+                            <li>ログインページ</li>
+                            <li>新規登録ページ</li>
+                            <li>商品管理ページ</li>
+                            <li>商品一覧ページ</li>
+                            <li>ショッピングカートページ</li>
+                            <li>購入完了ページ</li>
+                        </ul>
+                        <p>
+                            で構成されています。
                         </p>
                     </div>
                     <div class="card">
                         <h4>制作目的</h4>
                         <p>
-
+                            POSTメソッド、画像アップロード、セッション、Cookie、関数、PDO接続などPHPとSQLの基礎内容について学習し、学習内容の定着および応用として、ECサイトを制作しました。
                         </p>
                     </div>
                     <div class="card">
@@ -181,7 +198,7 @@
                             <span>遊び心</span>こだわり満載の商品ラインナップで、SNSでバズること間違いなし！？
                         </p>
                         <p>
-                            クーポンコード入力による割引機能、商品検索機能、購入バッジでカート内の商品数が一目で分かる機能など、ユーザー目線で欲しい機能を盛り込んでいます。
+                            クーポンコード入力による割引機能、商品検索機能、カート内の商品数が一目で分かる購入バッジなど、ユーザー目線で欲しい機能を盛り込んでいます。
                         </p>
                         <p>
                             加えて、フォームの二重バリデーション、ログイン時のセッション再発行、SQLインジェクション対策、XSS対策、パスワードハッシュ化、CSRFトークンなどのセキュリティ対策を施しています。さらに悲観的ロックによる排他制御によりデータの整合性を保てるようにも設計されています。
@@ -212,16 +229,13 @@
                                     ※ 架空サイトのため、実際に金銭が発生することはありません。
                                 </p>
                                 <p>
-                                    クーポンコードを入力すると、割引を適用することができます。
+                                    クーポンコードを入力すると、1ユーザーにつき1回のみ割引を適用することができます。
                                 </p>
-                                    <ul>
-                                        <li>SHIMAMOTO: ¥1,000OFF</li>
-                                        <li>HANDSTONE: ¥1,000OFF</li>
-                                        <li>ほか、その月のクーポン(詳しくはサイト内で案内しています)を使用することができます。</li>
-                                    </ul>
-                                <p>
-                                    クーポンは1ユーザーにつき1回のみ使用できます。
-                                </p>
+                                <ul>
+                                    <li>SHIMAMOTO: ¥1,000OFF</li>
+                                    <li>HANDSTONE: ¥1,000OFF</li>
+                                    <li>ほか、その月のクーポン(詳しくはサイト内で案内しています)を使用することができます。</li>
+                                </ul>
                             </li>
                         </ol>
                     </div>
@@ -235,7 +249,7 @@
                     <span class="tag javascript">JavaScript</span>
                 </h3>
                 <a href="communication_games/index.html">
-                    <img class="work-img" src="../images/communication_game.png" alt="画像ないのでとりあえずテキスト" />
+                    <img class="work-img" src="../images/communication_game.jpg" alt="画像ないのでとりあえずテキスト" />
                 </a>
                 <div class="card-wrapper">
                     <div class="card">
@@ -252,6 +266,12 @@
                     </div>
                     <div class="card">
                         <h4>工夫した点</h4>
+                        <p>
+                            ゲームの企画においては単に面白いゲームを行うのではなく、「コミュニケーション」と「ゲーム」それぞれの主目的を置くことを軸とし、「面白くてためになる」ものを目指しました。
+                        </p>
+                        <p>
+                            コーディングにおいても単に「動くものをつくる」のではなく「将来の自分と有志を担う人が安心して触れるものをつくる」ことを目的とし、可読性・保守性・拡張性を意識したコーディングを心がけました。
+                        </p>
                     </div>
                     <div class="card">
                         <h4>遊び方・ルールなど</h4>
