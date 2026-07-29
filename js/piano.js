@@ -1,284 +1,139 @@
-            // DOM
-
-            const dom = {
-
-                titleText: document.getElementById("title"),
-
-                currentSoundText: document.getElementById("current_sound"),
-
-                soundArea: document.getElementById("sounds"),
-
-                autoPlayButton: document.getElementById("autoplay_button"),
-
-                toggleSoundNameButton: document.getElementById("toggle_soundname_button"),                
-
-            };
-
-
-
-            // 手動演奏によるUIを消すためのミリ秒
-
-            const ERASE_MS = 1000;
-
-
-
-            // 各鍵盤データ
-
-            const KEY_DEFS = {
-
-                natural: [
-
-                    {
-
-                        id: "do",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_1do.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    {
-
-                        id: "re",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_2re.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    { 
-
-                        id: "mi",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_3mi.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    {
-
-                        id: "fa",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_4fa.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    { 
-
-                        id: "so",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_5so.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    { 
-
-                        id: "ra",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_6ra.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    { 
-
-                        id: "si",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_7si.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                    { 
-
-                        id: "higher_do",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_8do.m4a",
-
-                        buttonClass: "natural",
-
-                    },
-
-                ],
-
-                sharp: [
-
-                    { 
-
-                        id: "sharp_do",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_1do_pitch_plus_1.m4a",
-
-                        buttonClass: "sharp",
-
-                    },
-
-                    {
-
-                        id: "sharp_re",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_2re_pitch_plus_1.m4a",
-
-                        buttonClass: "sharp",
-
-                    },
-
-                    { 
-
-                        id: "sharp_fa",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_4fa_pitch_plus_1.m4a",
-
-                        buttonClass: "sharp",
-
-                    },
-
-                    { 
-
-                        id: "sharp_so",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_5so_pitch_plus_1.m4a",
-
-                        buttonClass: "sharp",
-
-                    },
-
-                    { 
-
-                        id: "sharp_ra",
-
-                        audioSrc: "sounds/maou_se_inst_piano1_6ra_pitch_plus_1.m4a",
-
-                        buttonClass: "sharp",
-
-                    },
-
-                ],
-
-            };
-
-
-
-            // DOM, Audio, ボタンをKEY_DEFSから生成して保持
-
-            const keyRegistry = {
-
-                natural: KEY_DEFS.natural.map((def) => ({
-
-                    id: def.id,
-
-                    kind: "natural",
-
-                    element: document.getElementById(def.id),
-
-                    button: null,
-
-                    audio: new Audio(def.audioSrc),
-
-                })),
-
-                sharp: KEY_DEFS.sharp.map((def) => ({
-
-                    id: def.id,
-
-                    kind: "sharp",
-
-                    element: document.getElementById(def.id),
-
-                    button: null,
-
-                    audio: new Audio(def.audioSrc),
-
-                })),
-
-            };
-
-
-
-            // ボタン配列
-
-            const naturalKeyButtons = Array.from(
-
-                document.getElementsByClassName("natural")
-
-            );
-
-            const sharpKeyButtons = Array.from(
-
-                document.getElementsByClassName("sharp")
-
-            );
-
-            const naturalSoundNames = Array.from(
-
-                document.getElementsByClassName("sound-name")
-
-            );
-
-
-
-            // 鍵盤DOM
-
-            const naturalKeyElements = keyRegistry.natural.map((k) => k.element);
-
-            const sharpKeyElements = keyRegistry.sharp.map((k) => k.element);
-
-
-
-            // ボタンとregistryとの紐づけ
-
-            keyRegistry.natural.forEach((k, index) => {
-
-                k.button = naturalKeyButtons[index] || null;
-
-            });
-
-            keyRegistry.sharp.forEach((k, index) => {
-
-                k.button = sharpKeyButtons[index] || null;
-
-            });
-
-
-
-            // キー参照
-
-            function getKeyRef(kind, index) {
-
-                const list =
-
-                    kind === "natural" ? keyRegistry.natural : keyRegistry.sharp;
-
-                return list[index] || null;
-
-            }
-
-
-
-            // 楽譜データ
-
-            function note(kind, index, durationMs) {
-
-                return { kind, index, durationMs };
-
-            }
-
-            function rest(durationMs) {
-
-                return { kind: "rest", index: -1, durationMs };
-
-            }
-
-
+// DOM
+const dom = {
+    titleText: document.getElementById("title"),
+    currentSoundText: document.getElementById("current_sound"),
+    soundArea: document.getElementById("sounds"),
+    autoPlayButton: document.getElementById("autoplay_button"),
+    toggleSoundNameButton: document.getElementById("toggle_soundname_button"),                
+};
+
+// 手動演奏によるUIを消すためのミリ秒
+const ERASE_MS = 1000;
+
+// 各鍵盤データ
+const KEY_DEFS = {
+    natural: [
+        {
+            id: "do",
+            audioSrc: "sounds/maou_se_inst_piano1_1do.m4a",
+            buttonClass: "natural",
+        },
+        {
+            id: "re",
+            audioSrc: "sounds/maou_se_inst_piano1_2re.m4a",
+            buttonClass: "natural",
+        },
+        { 
+            id: "mi",
+            audioSrc: "sounds/maou_se_inst_piano1_3mi.m4a",
+            buttonClass: "natural",
+        },
+        {
+            id: "fa",
+            audioSrc: "sounds/maou_se_inst_piano1_4fa.m4a",
+            buttonClass: "natural",
+        },
+        { 
+            id: "so",
+            audioSrc: "sounds/maou_se_inst_piano1_5so.m4a",
+            buttonClass: "natural",
+        },
+        { 
+            id: "ra",
+            audioSrc: "sounds/maou_se_inst_piano1_6ra.m4a",
+            buttonClass: "natural",
+        },
+        { 
+            id: "si",
+            audioSrc: "sounds/maou_se_inst_piano1_7si.m4a",
+            buttonClass: "natural",
+        },
+        { 
+            id: "higher_do",
+            audioSrc: "sounds/maou_se_inst_piano1_8do.m4a",
+            buttonClass: "natural",
+        },
+    ],
+    sharp: [
+        { 
+            id: "sharp_do",
+            audioSrc: "sounds/maou_se_inst_piano1_1do_pitch_plus_1.m4a",
+            buttonClass: "sharp",
+        },
+        {
+            id: "sharp_re",
+            audioSrc: "sounds/maou_se_inst_piano1_2re_pitch_plus_1.m4a",
+            buttonClass: "sharp",
+        },
+        { 
+            id: "sharp_fa",
+            audioSrc: "sounds/maou_se_inst_piano1_4fa_pitch_plus_1.m4a",
+            buttonClass: "sharp",
+        },
+        { 
+            id: "sharp_so",
+            audioSrc: "sounds/maou_se_inst_piano1_5so_pitch_plus_1.m4a",
+            buttonClass: "sharp",
+        },
+        { 
+            id: "sharp_ra",
+            audioSrc: "sounds/maou_se_inst_piano1_6ra_pitch_plus_1.m4a",
+            buttonClass: "sharp",
+        },
+    ],
+};
+
+// DOM, Audio, ボタンをKEY_DEFSから生成して保持
+const keyRegistry = {
+    natural: KEY_DEFS.natural.map((def) => ({
+        id: def.id,
+        kind: "natural",
+        element: document.getElementById(def.id),
+        button: null,
+        audio: new Audio(def.audioSrc),
+    })),
+    sharp: KEY_DEFS.sharp.map((def) => ({
+        id: def.id,
+        kind: "sharp",
+        element: document.getElementById(def.id),
+        button: null,
+        audio: new Audio(def.audioSrc),
+    })),
+};
+
+// ボタン配列
+const naturalKeyButtons = Array.from(document.getElementsByClassName("natural"));
+const sharpKeyButtons = Array.from(document.getElementsByClassName("sharp"));
+const naturalSoundNames = Array.from(document.getElementsByClassName("sound-name"));
+
+// 鍵盤DOM
+const naturalKeyElements = keyRegistry.natural.map((k) => k.element);
+const sharpKeyElements = keyRegistry.sharp.map((k) => k.element);
+
+// ボタンとregistryとの紐づけ
+keyRegistry.natural.forEach((k, index) => {
+    k.button = naturalKeyButtons[index] || null;
+});
+
+keyRegistry.sharp.forEach((k, index) => {
+    k.button = sharpKeyButtons[index] || null;
+});
+
+// キー参照
+function getKeyRef(kind, index) {
+    const list =
+        kind === "natural" ? keyRegistry.natural : keyRegistry.sharp;
+    return list[index] || null;
+}
+
+// 楽譜データ
+function note(kind, index, durationMs) {
+    return { kind, index, durationMs };
+}
+
+function rest(durationMs) {
+    return { kind: "rest", index: -1, durationMs };
+}
 
             const SONGS = [
 

@@ -1,5 +1,17 @@
 @import url(variables.css);
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -155,8 +167,16 @@ ol {
     transform: scale(1.25);
 }
 
+h4 {
+    margin: var(--space-x-small) 0;
+}
+
 h5 {
     font-size: var(--font-size-base);
+}
+
+.bold {
+    font-weight: bold;
 }
 
 footer {
@@ -165,6 +185,7 @@ footer {
     display: grid;
     height: var(--footer-height);
     margin-top: var(--space-xx-large);
+    max-width: 100%;
     place-items: center;
 }
 

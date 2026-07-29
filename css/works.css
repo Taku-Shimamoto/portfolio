@@ -27,13 +27,15 @@ section > a img {
     width: 33%;
 }
 
-.card p {
+.card-text {
+    background-color: var(--card-text-background);
+    border-radius: var(--border-radius-base);
     font-size: var(--font-size-small);
+    padding: var(--space-small);
     text-align: justify;
-    padding: var(--space-x-small);
 }
 
-.card p span {
+.card-text span {
     text-decoration: line-through;
 }
 
@@ -86,7 +88,7 @@ section > a img {
     background-color: var(--light-color-sixth);
 }
 
-ol, ul {
+ol, ul:not(.menu-list) {
     font-size: var(--font-size-small);
     margin-top: var(--space-x-small);
 }

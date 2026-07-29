@@ -15,12 +15,13 @@
 }
 
 .profile-img {
-    max-width: 35%;
+    max-width: 20%;
 }
 
-.profile-text {
+.profile-list {
     font-size: var(--font-size-small);
     line-height: 200%;
+    list-style: none;
 }
 
 .career p,

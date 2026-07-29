@@ -1,1 +1,97 @@
 @import url(variables.css);
+
+main {
+    font-size: var(--font-size-small);
+}
+
+img {
+    max-width: 30%;
+}
+
+h4 {
+    font-size: var(--font-size-base);
+}
+
+.profile-wrapper,
+.workout-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-x-small);
+    justify-content: center;
+}
+
+.profile-list {
+    list-style: none;
+    line-height: 200%;
+}
+
+.likes {
+    line-height: normal;
+    list-style: none;
+    padding-inline-start: var(--space-medium);
+}
+
+p {
+    margin: var(--space-x-small) 0;
+}
+
+.list {
+    line-height: 150%;
+    padding-inline-start: var(--space-large);
+}
+
+.workout-text {
+    text-align: justify;
+}
+
+.card-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+}
+
+.card {
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 0.1em 0.2em var(--border-bottom-color);
+    max-width: 60%;
+    padding: var(--space-x-small);
+}
+
+.card:nth-of-type(1) {
+    background-color: var(--light-color-fisrt);
+}
+
+.card:nth-of-type(2) {
+    background-color: var(--light-color-second);
+}
+
+.card:nth-of-type(3) {
+    background-color: var(--light-color-third);
+}
+
+.card:nth-of-type(4) {
+    background-color: var(--light-color-fourth);
+}
+
+.card-text {
+    background-color: var(--card-text-background);
+    border-radius: var(--border-radius-base);
+    padding: var(--space-small);
+    text-align: justify;
+}
+
+@media (max-width: 376px) {
+    img {
+        max-width: 100%;
+    }
+
+    .profile-wrapper,
+    .workout-wrapper {
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
