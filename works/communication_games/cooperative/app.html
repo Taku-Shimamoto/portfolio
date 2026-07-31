@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../../../css/cooperative.css" />
+        <script src="../../../js/cooperative.js" defer></script>
+        <title>協力非協力ゲーム</title>
+    </head>
+    <body>
+        <fieldset id="player_select">
+            <legend>チームのプレイヤー人数を選択してください。</legend>
+            <input type="radio" name="player" value="3" /><label for="3">3人</label>
+            <input type="radio" name="player" value="4" /><label for="4">4人</label>
+            <input type="radio" name="player" value="5" /><label for="5">5人</label>
+        </fieldset>
+        <div id="game_display" class="game-display">
+            <h1>プレイ人数: <span class="current-players"></span>人
+                現在のターン数: <span id="current_turn"></span>
+                故障回数: <span id="breakdown_count"></span>回</h1>
+            <div id="toggle" class="toggle">ステータス変動表を見る</div>
+            <h2>機械の稼働状況</h2>
+            <div class="status-wrapper">
+                <p id="out_of_order" class="status">故障</p>
+                <p id="-3" class="status">-3</p>
+                <p id="-2" class="status">-2</p>
+                <p id="-1" class="status">-1</p>
+                <p id="0" class="status highlighted">±0</p>
+                <p id="+1" class="status">+1</p>
+                <p id="+2" class="status">+2</p>
+                <p id="+3" class="status">+3</p>
+            </div>
+            <h2>現在の投票状況: <span id="voted"></span> / <span class="current-players"></span>人</h2>
+            <div class="vote-button-wrapper">
+                <input type="button" id="cooperative" class="vote-button" value="協力" />
+                <input type="button" id="uncooperative" class="vote-button" value="非協力" />
+                <input type="button" id="redo" value="やり直す" disabled />
+                <input type="button" id="open" value="開票する" disabled />
+            </div>
+            <div id="result" class="result"></div>
+            <div id="request" class="request"></div>
+            <nav id="nav">
+                <h3>ステータス変動表(<span class="current-players"></span>人)</h3>
+                <ol id="status_table"></ol>
+            </nav>
+        </div>
+    </body>
+</html>

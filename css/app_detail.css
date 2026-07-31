@@ -1,0 +1,142 @@
+@import url(variables.css);
+
+:root {
+    --img-width: 800px;
+    --arrow-size: 24px;
+    --dot-size: 10px;
+
+    --arrow-padding: 2px;
+
+    --arrow-background: #fffa;
+    --arrow-background-light: #fffe;
+    --dot-color-base: #000;
+    --dot-color-active: #f88;
+}
+
+main {
+    margin-top: var(--header-height);
+}
+
+p {
+    font-size: var(--font-size-small);
+    margin: var(--space-x-small);
+    text-align: justify;
+}
+
+img {
+    max-width: 100%;
+}
+
+.slider-outside {
+    align-items: center;
+    background-color: var(--light-color-sixth);
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 0.1em 0.2em var(--border-bottom-color);
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-small) auto 0 auto;
+    max-width: 60%;
+    padding: var(--space-medium);
+}
+
+.slider-wrapper {
+    border-radius: var(--border-radius-base);
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: transform var(--duration-medium) ease-out;
+}
+
+.slider-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.arrow {
+    background-color: var(--arrow-background);
+    border-radius: 50%;
+    cursor: default;
+    height: var(--arrow-size);
+    margin: 0;
+    padding: var(--arrow-padding);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: var(--arrow-size);
+    z-index: 10; 
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.arrow:hover {
+    background-color: var(--arrow-background-light);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform var(--duration-medium) ease;
+}
+
+.dots {
+    display: flex;
+    gap: var(--space-small);
+    justify-content: center;
+    margin-top: var(--space-small);
+}
+
+.dots span {
+    background-color: var(--dot-color-base);
+    border-radius: 50%;
+    display: inline-block;
+    height: var(--dot-size);
+    width: var(--dot-size);
+}
+
+.dots span:hover {
+    cursor: pointer;
+    opacity: var(--opacity-base);
+}
+
+.dots span.active {
+    background-color: var(--dot-color-active);
+}
+
+.button {
+    background-color: var(--button-background);
+    border: none;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 0.1em var(--button-shadow);
+    color: var(--primary-font-color);
+    cursor: pointer;
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    margin: var(--space-small) auto;
+    padding: var(--space-x-small) var(--space-small);
+    transition: opacity var(--duration-medium);
+}
+
+.button:hover {
+    opacity: var(--opacity-base);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0.1em);
+}
+
+@media (max-width: 376px) {
+    .slider-outside {
+        max-width: 100%;
+        padding: var(--space-x-small);
+    }
+
+    .dots {
+        margin-top: var(--space-x-small);
+    }
+}

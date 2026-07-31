@@ -17,7 +17,6 @@ h4 {
     display: flex;
     flex-direction: row;
     gap: var(--space-x-small);
-    justify-content: center;
 }
 
 .profile-list {
@@ -59,7 +58,7 @@ p {
 }
 
 .card:nth-of-type(1) {
-    background-color: var(--light-color-fisrt);
+    background-color: var(--light-color-first);
 }
 
 .card:nth-of-type(2) {

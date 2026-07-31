@@ -11,6 +11,10 @@ section > a img {
     width: 100%;
 }
 
+p {
+    margin: var(--space-x-small) 0;
+}
+
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -23,6 +27,8 @@ section > a img {
 .card {
     border-radius: var(--border-radius-large);
     box-shadow: 0 0.1em 0.2em var(--border-bottom-color);
+    display: flex;
+    flex-direction: column;
     padding: var(--space-x-small);
     width: 33%;
 }
@@ -30,8 +36,9 @@ section > a img {
 .card-text {
     background-color: var(--card-text-background);
     border-radius: var(--border-radius-base);
+    flex: 1;
     font-size: var(--font-size-small);
-    padding: var(--space-small);
+    padding: 0 var(--space-small);
     text-align: justify;
 }
 
@@ -40,7 +47,7 @@ section > a img {
 }
 
 .card:nth-of-type(1) {
-    background-color: var(--light-color-fisrt);
+    background-color: var(--light-color-first);
 }
 
 .card:nth-of-type(2) {
@@ -65,7 +72,7 @@ section > a img {
 }
 
 .html {
-    background-color: var(--light-color-fisrt);
+    background-color: var(--light-color-first);
 }
 
 .css {
@@ -90,7 +97,7 @@ section > a img {
 
 ol, ul:not(.menu-list) {
     font-size: var(--font-size-small);
-    margin-top: var(--space-x-small);
+    margin: var(--space-x-small) 0;
 }
 
 @media (max-width: 376px) {

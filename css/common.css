@@ -29,6 +29,7 @@ body {
 }
 
 a {
+    color: var(--link-font-color);
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: text-decoration-color var(--duration-short);
@@ -164,7 +165,7 @@ ol {
 
 .work-img:hover {
     border-radius: var(--border-radius-base);
-    transform: scale(1.25);
+    transform: scale(1.1);
 }
 
 h4 {
