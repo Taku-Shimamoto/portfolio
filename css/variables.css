@@ -1,6 +1,7 @@
 :root {
     /* layout */
     --border-width-base: 1px;
+    --border-width-strong: 2px;
     --border-left: 8px;
     --border-radius-base: 8px;
     --border-radius-large: 16px;
@@ -17,6 +18,7 @@
 
     /* color */
     --border-bottom-color: #ccc;
+    --border-hover-color: #000;
     --border-left-color: #aaa;
     --button-background: #0a0;
     --button-shadow: #080;

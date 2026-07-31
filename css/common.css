@@ -157,23 +157,19 @@ ol {
 }
 
 .work-img {
+    border-radius: var(--border-radius-base);
     max-width: 100%;
     transition:
-        border-radius var(--duration-long),
         transform var(--duration-long);
 }
 
 .work-img:hover {
-    border-radius: var(--border-radius-base);
+    border: var(--border-width-strong) solid var(--border-hover-color);
     transform: scale(1.1);
 }
 
 h4 {
-    margin: var(--space-x-small) 0;
-}
-
-h5 {
-    font-size: var(--font-size-base);
+    margin: var(--space-small) 0;
 }
 
 .bold {
