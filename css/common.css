@@ -186,22 +186,23 @@ footer {
     place-items: center;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 501px) {
     .header-right {
         display: none;
     }
 
-    h2 {
-        right: 5%;
-        top: 5%;
-    }
+    @media (max-width: 376px) {
+        h2 {
+            right: 5%;
+            top: 5%;
+        }
 
-    h2 span:first-of-type {
-        font-size: var(--font-size-xx-large);
-    }
+        h2 span:first-of-type {
+            font-size: var(--font-size-xx-large);
+        }
 
-    h2 span:last-of-type {
-        font-size: var(--font-size-large);
+        h2 span:last-of-type {
+            font-size: var(--font-size-large);
+        }
     }
-
 }

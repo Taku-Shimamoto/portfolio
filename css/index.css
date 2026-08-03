@@ -96,22 +96,39 @@ textarea {
     max-width: 40%;
 }
 
-@media (max-width: 376px) {
-    .profile-wrapper {
-        flex-wrap: wrap;
-    }
-
+@media (max-width: 769px) {
     .profile-img {
-        max-width: 100%;
-    }
-
-    form {
-        margin: 0 var(--space-x-small);
+        max-width: 40%;
     }
 
     input[type="text"],
-    input[type="email"],
+    input[type="email"] {
+        max-width: 60%;
+    }
+
     textarea {
-        max-width: 100%;
+        max-width: 60%;
+    }
+
+    @media (max-width: 501px) {
+        .profile-wrapper {
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            max-width: 100%;
+        }
+
+        @media (max-width: 376px) {
+            form {
+                margin: 0 var(--space-x-small);
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                max-width: 100%;
+            }
+        }
     }
 }

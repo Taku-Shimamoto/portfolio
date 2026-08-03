@@ -129,12 +129,22 @@ ol, ul:not(.menu-list) {
     transform: translateY(0.1em);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 769px) {
     section > a {
-        width: 100%;
+        width: 80%;
     }
 
     .card {
-        width: 100%;
+        width: 80%;
+    }
+
+    @media (max-width: 376px) {
+        section > a {
+            width: 100%;
+        }
+
+        .card {
+            width: 100%;
+        }
     }
 }

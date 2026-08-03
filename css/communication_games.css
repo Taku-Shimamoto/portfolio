@@ -63,13 +63,24 @@ ul {
     transform: translateX(var(--space-x-small));
 }
 
-@media (max-width: 376px) {
-    .container {
-        flex-direction: column;
+@media (max-width: 768px){
+    .poster {
+        width: 40%;
     }
 
-    .poster,
     .rule {
-        width: 100%;
+        width: 60%;
     }
+
+    @media (max-width: 376px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .poster,
+        .rule {
+            width: 100%;
+        }
+    }
+
 }

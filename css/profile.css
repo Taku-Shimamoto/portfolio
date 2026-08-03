@@ -86,17 +86,25 @@ p {
     text-align: justify;
 }
 
-@media (max-width: 376px) {
-    img {
-        max-width: 100%;
-    }
-
-    .profile-wrapper,
-    .workout-wrapper {
-        flex-direction: column;
-    }
-
+@media (max-width: 769px) {
     .card {
-        max-width: 100%;
+        max-width: 80%;
+    }
+
+    @media (max-width: 501px) {
+        img {
+            max-width: 100%;
+        }
+
+        .profile-wrapper,
+        .workout-wrapper {
+            flex-direction: column;
+        }
+
+        @media (max-width: 376px) {
+            .card {
+                max-width: 100%;
+            }
+        }
     }
 }
