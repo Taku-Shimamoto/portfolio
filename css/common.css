@@ -3,12 +3,10 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20%);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
     }
 }
 
@@ -123,10 +121,12 @@ h2 span {
 }
 
 h2 span:first-of-type {
+    animation: fadeIn var(--duration-fadeIn);
     font-size: var(--font-size-xxx-large);
 }
 
 h2 span:last-of-type {
+    animation: fadeIn var(--duration-fadeIn) var(--fadeIn-delay) backwards;
     font-size: var(--font-size-xx-large);
 }
 

@@ -39,7 +39,7 @@
         </div>
         <main>
             <nav class="breadcrumb-list">
-                <a href="../index.html">Home</a> &lt; Works
+                <a href="../index.html">Home</a> &gt; Works
             </nav>
             <section>
                 <h3 id="piano">
@@ -48,7 +48,7 @@
                     <span class="tag css">CSS</span>
                     <span class="tag javascript">JavaScript</span>
                 </h3>
-                <a href="piano.html">
+                <a href="piano.html" target="_blank" rel="noopener noreferrer">
                     <img class="work-img" src="../images/piano.png" alt="自動演奏ピアノアプリ" />
                 </a>
                 <div class="card-wrapper">
@@ -102,6 +102,7 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="button view" id="piano_view" data-href="piano.html">View</button>
             </section>
             <section>
                 <h3 id="ui_dictionary">
@@ -111,7 +112,7 @@
                     <span class="tag javascript">JavaScript</span>
                     <span class="tag others">GitHub</span>
                 </h3>
-                <a href="../../UI_dictionary/index.html">
+                <a href="../../UI_dictionary/index.html" target="_blank" rel="noopener noreferrer">
                     <img class="work-img" src="../images/ui_dictionary.png" alt="UI Dictionary" />
                 </a>
                 <div class="card-wrapper">
@@ -153,6 +154,7 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="button view" id="ui_view" data-href="../../UI_dictionary/index.html">View</button>
             </section>
             <section>
                 <h3 id="portfolio">
@@ -171,17 +173,35 @@
                             <p>
                                 これまでの学習内容と成果物をまとめたポートフォリオサイトです。
                             </p>
+                            <p>
+                                青と白を基調とし、大好きなトレーニングを全面に出したデザインにしました。
+                            </p>
+                            <p>
+                                文章の作成に関しては、至る所でトレーニングやプログラミング学習に対する熱意・モットーを感じてもらえることを心がけました。
+                            </p>
                         </div>
                     </div>
                     <div class="card">
                         <h4>工夫した点</h4>
                         <div class="card-text">
-                            <p>
-                                
-                            </p>
+                            <ol>
+                                <li>
+                                    ディレクトリ構成
+                                    <p>
+                                        CSSやJavaScriptのファイルを共通して使うもの、個別ページで使うものとに細かく分けることで、保守性を持たせています。単に保守性を持たせるだけではなく、グループ開発を想定した模擬的な訓練という意味も持っています。
+                                    </p>
+                                </li>
+                                <li>
+                                    一覧ページと詳細ページの情報量の調整
+                                    <p>
+                                        階層が浅いページ(一覧を表示するページ)ではできるだけ情報を最小限にとどめ、階層の深いページに行くほど詳細に情報を記載するようにしています。
+                                    </p>
+                                </li>
+                            </ol>
                         </div>
                     </div>
                 </div>
+                <button type="button" class="button view" id="portfolio_view">View</button>
             </section>
             <section>
                 <h3 id="ec_site">
@@ -192,7 +212,7 @@
                     <span class="tag php">PHP</span>
                     <span class="tag mysql">MySQL</span>
                 </h3>
-                <a href="https://portfolio02.dc-itex.com/hachioji/0010/ec_site/index.php">
+                <a href="https://portfolio02.dc-itex.com/hachioji/0010/ec_site/index.php" target="_blank" rel="noopener noreferrer">
                     <img class="work-img" src="../images/ec_site.png" alt="EC Site" />
                 </a>
                 <div class="card-wrapper">
@@ -275,6 +295,8 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="button view" id="ec_view"
+                    data-href="https://portfolio02.dc-itex.com/hachioji/0010/ec_site/index.php">View</button>
             </section>
             <section>
                 <h3 id="communication_game">
@@ -323,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="button" id="communication_game_apps">View More</button>
+                <button type="button" class="button" id="view_more">View More</button>
             </section>
         </main>
         <footer>

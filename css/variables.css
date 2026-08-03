@@ -48,6 +48,8 @@
     --duration-short: .2s;
     --duration-medium: .5s;
     --duration-long: .8s;
+    --duration-fadeIn: 2s;
+    --fadeIn-delay: 1s;
 
     /* spacing */
     --space-x-small: 8px;

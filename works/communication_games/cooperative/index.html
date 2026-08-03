@@ -3,10 +3,12 @@
     <head>
         <link rel="stylesheet" href="../../../css/common.css" />
         <link rel="stylesheet" href="../../../css/app_detail.css" />
+        <link rel="stylesheet" href="../../../css/prism.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
         <script src="../../../js/app_detail.js" defer></script>
+        <script src="../../../js/prism.js"></script>
         <title>協力 / 非協力ゲーム 詳細ページ| Taku Shimamoto's Portfolio</title>
     </head>
     <body>
@@ -28,13 +30,13 @@
         </header>
         <main>
             <nav class="breadcrumb-list">
-                <a href="../../../index.html">Home</a> &lt; <a href="../../index.html">Works</a> &lt; <a href="../index.html">Communication Game Apps</a> &lt; 協力 / 非協力ゲーム
+                <a href="../../../index.html">Home</a> &gt; <a href="../../index.html">Works</a> &gt; <a href="../index.html">Communication Game Apps</a> &gt; 協力 / 非協力ゲーム
             </nav>
             <div class="slider-outside">
                 <div class="slider-wrapper">
                     <span id="prev" class="arrow prev">&lt;</span>
                     <span id="next" class="arrow next">&gt;</span>
-                    <a href="app.html">
+                    <a href="app.html" target="_blank" rel="noopener noreferrer">
                         <div id="slider_track" class="slider-track">
                             <img src="../../../images/cooperative01.png" alt="" />
                             <img src="../../../images/cooperative02.png" alt="" />
@@ -133,7 +135,7 @@
                     このゲームは「協力」と「駆け引き」の両方を同時に求められるというところが、とても新感覚で面白いゲームです。なぜならば、「機械を故障させない」というチーム共通の目的がありながらも、「1回でも多く非協力に投票する」という個人の目的があるからです。
                 </p>
                 <p>
-                    「非協力」に投票して機械の稼働ステータスがマイナスになると、ステータスを戻すために協力を呼びかけ、誰かが「協力」に投票しなければなりません。そのタイミングで実際に「協力」を押すのか、それとも「1人くらい非協力を押しても大丈夫だろう」と判断するのか、という駆け引きがとても楽しいゲームです。
+                    「非協力」に投票して機械の稼働ステータスがマイナスになると、ステータスを戻すために協力を呼びかけ、誰かが「協力」に投票しなければなりません。そのタイミングで実際に「協力」を押すのか、それともだれかが「協力」を押していると読んで「非協力」を押すのか、という駆け引きがとても楽しいゲームです。
                 </p>
                 <p>
                     ちなみに私は欲をかきすぎてしまい、機械を2回も故障させ、負けてしまいました...。その一方で、機械を一度も故障させることなく、「非協力」に8回も投票できたプレイヤーもいました。このゲームで勝つことができるのは、協力すべき場面でしっかりとチームに呼びかけ、「協力」に投票できる人なのかもしれません。
@@ -143,12 +145,12 @@
                     人数ごとにステータス変動値が変わる処理を、最初はif文を用いて書いていました。そうすると条件分岐があまりに多くなりすぎてかなり複雑なロジックになります。とても「他人や未来の自分が安心して触れる」ものではありません。
                 </p>
                 <p>
-                    そのときちょうど出会ったのが「if文を用いた条件分岐」という視点から「オブジェクトで対応表をつくり、対応する値を返す」という視点への切り替えでした。
+                    そのときちょうど出会ったのが「if文を用いた条件分岐」という視点から「オブジェクトで対応表をつくり、対応する値を取り出す」という視点への切り替えでした。
                 </p>
                 <h5>Before</h5>
-                <pre><code><!--
--->let cooperative = votes.reduce((a, c) => a + c, 0,);
-let uncooperative = players - cooperative;
+                <pre><code class="language-js"><!--
+-->const cooperative = votes.reduce((a, c) => a + c, 0,);
+const uncooperative = players - cooperative;
 
 if (cooperative === 0 && uncooperative === 4) {
     statusIndex -= 3;
@@ -157,7 +159,7 @@ if (cooperative === 0 && uncooperative === 4) {
 } ...<!--
             --></code></pre>
                 <h5>After</h5>
-                <pre><code><!--
+                <pre><code class="language-js"><!--
 -->const STATUS_TABLE = {
     3: [-3, -1, 0, 2],
     4: [-3, -1, 0, 1, 2],
@@ -165,7 +167,7 @@ if (cooperative === 0 && uncooperative === 4) {
 };
 
 function calculateCooperativePlayers() {
-    return votes.reduce((a, c) =>  a + c, 0,);
+    return votes.reduce((a, c) => a + c, 0,);
 }
 
 const cooperative = calculateCooperativePlayers();

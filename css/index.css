@@ -22,6 +22,7 @@
     font-size: var(--font-size-small);
     line-height: 200%;
     list-style: none;
+    padding-inline-start: 0;
 }
 
 .career p,

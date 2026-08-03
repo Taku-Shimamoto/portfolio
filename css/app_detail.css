@@ -12,9 +12,6 @@
     --dot-color-base: #000;
     --dot-color-active: #f88;
     --code-background: #006;
-    --code-font-color: #ffd;
-
-    --code-font-family: Monaco;
 }
 
 main {
@@ -136,8 +133,6 @@ pre {
 }
 
 code {
-    color: var(--code-font-color);
-    font-family: var(--code-font-family);
     max-width: 100%;
 }
 

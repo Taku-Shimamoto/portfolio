@@ -290,12 +290,9 @@
         }
 
         // keydownイベントの一括管理
-        document.addEventListener("keydown", (e) => hundleKeydownEvents(e));
-        function hundleKeydownEvents(e) {
+        document.addEventListener("keydown", handleKeydownEvents);
+        function handleKeydownEvents(e) {
             if (e.key === "Delete") startEmptyMode();
             if (e.key === "Enter" || e.key === " ") switchTeamColor();
-            if (e.key === "Escape")  {
-                clearHighlight();
-                escapeEmptyMode();
-            }
+            if (e.key === "Escape") escapeEmptyMode();
         }

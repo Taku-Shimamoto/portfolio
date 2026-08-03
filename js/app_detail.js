@@ -50,4 +50,4 @@ resetTimer();
 
 // ボタン
 const viewButton = document.getElementById("view");
-viewButton.addEventListener("click", () => location.href = "app.html");
+viewButton.addEventListener("click", () => window.open("app.html", "_blank"));

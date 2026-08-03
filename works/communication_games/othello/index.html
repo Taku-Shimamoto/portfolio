@@ -3,10 +3,12 @@
     <head>
         <link rel="stylesheet" href="../../../css/common.css" />
         <link rel="stylesheet" href="../../../css/app_detail.css" />
+        <link rel="stylesheet" href="../../../css/prism.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
         <script src="../../../js/app_detail.js" defer></script>
+        <script src="../../../js/prism.js"></script>
         <title>アキネーターオセロ 詳細ページ| Taku Shimamoto's Portfolio</title>
     </head>
     <body>
@@ -28,13 +30,13 @@
         </header>
         <main>
             <nav class="breadcrumb-list">
-                <a href="../../../index.html">Home</a> &lt; <a href="../../index.html">Works</a> &lt; <a href="../index.html">Communication Game Apps</a> &lt; アキネーターオセロ
+                <a href="../../../index.html">Home</a> &gt; <a href="../../index.html">Works</a> &gt; <a href="../index.html">Communication Game Apps</a> &gt; アキネーターオセロ
             </nav>
             <div class="slider-outside">
                 <div class="slider-wrapper">
                     <p id="prev" class="arrow prev">&lt;</p>
                     <p id="next" class="arrow next">&gt;</p>
-                    <a href="app.html">
+                    <a href="app.html" target="_blank" rel="noopener noreferrer">
                         <div id="slider_track" class="slider-track">
                             <img src="../../../images/othello01.png" alt="" />
                             <img src="../../../images/othello02.png" alt="" />
@@ -186,18 +188,15 @@
                     もう一つ、新しい試みがあります。それはショートカットキーの導入です。操作をスムーズに行えるようにしたいと考え、簡易的なものではありますが、スペースキーまたはEnterキーでチーム切り替え、Deleteキーでマス削除、Escキーでマス削除状態のキャンセルをできるようにしました。
                 </p>
                 <p>
-                    実装当時、switchTeamcolor()、startEmptyMode()、escapeEmptyMode()すべての関数のイベントリスナーがバラバラに書かれていました。このとき、「3つくらいなら追えるかもしれないけど、数が多くなったときのためにイベントリスナーの一覧表のようなものが欲しい」と思い考えた結果、ラッパー関数を置いた現在の形になりました。
+                    実装当時、ショートカットキーと紐づけた関数switchTeamcolor()、startEmptyMode()、escapeEmptyMode()のイベントリスナーがバラバラに書かれていました。このとき、「3つくらいなら追えるかもしれないけど、数が多くなったときのためにイベントリスナーの一覧表のようなものが欲しい」と思い考えた結果、ラッパー関数を置いた現在の形になりました。
                 </p>
-                <pre><code><!--
-    -->document.addEventListener("keydown", (e) => hundleKeydownEvents(e));
-        function handleKeydownEvents(e) {
-            if (e.key === "Delete") startEmptyMode();
-            if (e.key === "Enter" || e.key === " ") switchTeamColor();
-            if (e.key === "Escape")  {
-                clearHighlight();
-                escapeEmptyMode();
-            }
-        }<!--
+                <pre><code class="language-js"><!--
+    -->document.addEventListener("keydown", handleKeydownEvents);
+function handleKeydownEvents(e) {
+    if (e.key === "Delete") startEmptyMode();
+    if (e.key === "Enter" || e.key === " ") switchTeamColor();
+    if (e.key === "Escape") escapeEmptyMode();
+}<!--
                 --></code></pre>
                 <p>
                     こうすることで、ショートカットキーとして何が使えるのかが一目で分かるだけでなく、キーを変えたり追加したりしたいとなったらこの周辺を触れば良いということが読み手に伝わります。
