@@ -1,0 +1,263 @@
+@import url(style.css);
+
+/*  */
+
+/* CSS崩壊 */
+.contents.anomaly-css-break *,
+.sample.anomaly-css-break * {
+    all: unset;
+}
+
+/* 背景色が少しずつ変わる */
+@keyframes changeBackgroundColor {
+    from {
+        background-color: #fff;
+    }
+
+    to {
+        background-color: #ddd;
+    }
+}
+
+body.anomaly-background-color {
+    animation: changeBackgroundColor 90s;
+}
+
+/* 余白を狭くする */
+h2.anomaly,
+h3.anomaly {
+    margin-top: 20px;
+}
+
+/* フォントの書式が違う */
+body.anomaly-font-family * {
+    font-family: "Noto Serif JP";
+}
+
+/* 文字サイズが少し大きい */
+p.anomaly {
+    font-size: 18px;
+}
+
+/* スクロールできない */
+body.anomaly-scroll-bar {
+    overflow-y: hidden;
+}
+
+/* マウスカーソルが指にならない */
+a.anomaly {
+    cursor: progress;
+}
+
+/* 文字間隔が少し広い */
+body.anomaly-letter-spacing * {
+    letter-spacing: 0.2em;
+}
+
+/* トースト通知 */
+@keyframes showToastNotice {
+    0% {
+        transform: translateX(100%);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    70% {
+        transform: translateX(-24px);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.toast-notice {
+    background-color: #0b0b;
+    border-radius: 8px;
+    color: #fff;
+    cursor: default;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    position: fixed;
+    right: 0;
+    top: 88px;
+    transform: translateX(100%);
+    user-select: none;
+}
+
+.toast-notice.anomaly {
+    animation: showToastNotice 2s;
+}
+
+
+/* ヘッダーの高さが少し大きい */
+header.anomaly-height {
+    height: 90px;
+}
+
+/* "Taro"の"T"の色が消える */
+header span.anomaly {
+    color: #fff;
+}
+
+/* ヘッダーメニューが消える */
+.header-right.anomaly {
+    display: none;
+}
+
+/* 背景画像の位置が違う */
+.top-image.anomaly {
+    background-position: bottom;
+}
+
+/* ヘッダーの透明度がなくなる */
+header.anomaly-opacity {
+    background-color: #000;
+}
+
+/* ボーダー線に厚みがある */
+h3.anomaly-border-width {
+    border-width: 2px;
+}
+
+/* 自己紹介文の行間が違う */
+.introduction-text.anomaly {
+    line-height: 150%;
+}
+
+/* 木の画像が少しずつ大きくなる */
+@keyframes changeImgSize {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.introduction-image.anomaly-scale {
+    animation: changeImgSize 60s;
+}
+
+/* 木の画像が上下反転している */
+.introduction-image.anomaly-inverted {
+    transform: rotateX(180deg);
+}
+
+/* ボックスの角丸がなくなっている */
+.content-box.anomaly-radius {
+    border-radius: unset;
+}
+
+/* ボックスに影がついている */
+.content-box.anomaly-shadow {
+    box-shadow: 4px 4px 8px #ccc;
+}
+
+/* "好きなもの"と"Webサイト"の配色が逆 */
+.favorites.list.anomaly-color {
+    color: #FFE8F6;
+}
+
+.websites.anomaly-color,
+.websites.anomaly-color a {
+    color: #FEFFC7;
+}
+
+/* ボーダー線の形状が違う */
+.contents-logo.anomaly {
+    border-bottom-style: dashed;
+}
+
+/* 作品画像が回転する */
+@keyframes rotateImg {
+    0% {
+        transform: rotateY(0deg);
+    }
+    10% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.gallery-pic img.anomaly {
+    animation: rotateImg 5s linear infinite;
+}
+
+/* 画像と作品名の間に余白がある */
+.gallery-pics.anomaly img {
+    margin-bottom: 5px;
+}
+
+/* 必須マークが揺れる */
+@keyframes shake {
+    0% {
+        transform: translateX(0%);
+    }
+
+    5% {
+        transform: translateX(5px);
+    }
+
+    10% {
+        transform: translateX(-5px);
+    }
+
+    15% {
+        transform: translateX(5px);
+    }
+
+    20% {
+        transform: translateX(-5px);
+    }
+
+    25% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.must.anomaly {
+    animation: shake 5s infinite;
+}
+
+/* フォームハイライトが赤い */
+input[type="text"].anomaly:focus {
+    outline-color: #f00;
+}
+
+/* ボタン効果がついている */
+.btn.anomaly-effect:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.btn.anomaly-effect:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+/* ボタンにボーダー線がついている */
+.btn.anomaly-border {
+    border: 1px solid #000;
+}
+
+/* フッターの文字位置が少しずれる */
+footer p.anomaly {
+    font-size: 16px;
+    transform: translateX(-40px);
+}
+
+/* フッターの色が違う */
+footer.anomaly {
+    background-color: green;
+}
