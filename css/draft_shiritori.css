@@ -1,1 +1,421 @@
-@import url(variables.css);
+:root {
+    /* color */
+    --background-color-base: #fff;
+    --background-color-draft01: #05080f;
+    --background-color-draft02: #142542;
+    --background-color-draft03: #416fbd;
+    --background-color-modal: #222c;
+    --font-color-base: #000;
+    --font-color-draft: #ddd;
+    --team1-background-color: #fdd;
+    --team1-logo-background: #f88;
+    --team1-logo-shadow: #a00;
+    --team2-background-color: #ddf;
+    --team2-logo-background: #88f;
+    --team2-logo-shadow: #00a;
+    --highlight-color: #ee0;
+    --letter-box-background: #fff;
+    --letter-box-shadow: #ccc;
+    --letter-button-color: #88f;
+    --letter-button-lower-shadow: #00a;
+    --letter-button-upper-shadow: #aaf;
+    --letter-button-color-disabled: #f88;
+    --letter-button-color-lower-shadow-disabled: #a00;
+    --letter-button-color-upper-shadow-disabled: #faa;
+    --random-button-color: #fa0;
+    --random-button-lower-shadow: #800;
+    --random-button-upper-shadow: #f88;
+    --font-color-danger: #f33;
+
+    /* duration */
+    --duration-short: .2s;
+    --duration-medium: .5s;
+    --duration-long: .8s;
+
+    /* font */
+    --font-size-small: 14px;
+    --font-size-large: 24px;
+    --font-size-x-large: 32px;
+    --primary-font: sans-serif;
+    --head-font: "UD デジタル 教科書体 NP";
+    --team-logo-font: "Times New Roman";
+    --letter-spacing-base: .05em;
+
+    /* layout */
+    --border-radius-base: 4px;
+    --border-radius-medium: 20px;
+    --border-radius-max: 50px;
+    --close-button-height: 2px;
+    --close-button-size: 48px;
+    --close-button-width: 32px;
+    --shadow-width-small: 1px;
+    --shadow-width-large: 2px;
+    --border-width: 8px;
+    --highlight-border-width: 4px;
+    --letter-box-size: 64px;
+    --letter-button-size: 40px;
+    --opacity-base: .6;
+
+    /* spacing */
+    --spacing-xx-small: 8px;
+    --spacing-x-small: 16px;
+    --spacing-small: 24px;
+    --spacing-medium: 32px;
+    --spacing-large: 40px;
+    --spacing-x-large: 48px;
+    --spacing-xx-large: 64px;
+    --spacing-xxx-large: 80px;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+body {
+    background-color: var(--background-color-base);
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    transition: 
+        background-color var(--duration-long),
+        color var(--duration-long);
+}
+
+body.draft {
+    background: linear-gradient(
+        to bottom,
+        var(--background-color-draft01) 0%,
+        var(--background-color-draft02) 35%,
+        var(--background-color-draft03) 100%
+    );
+    color: var(--font-color-draft);
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-x-small);
+    height: 95vh;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    user-select: none;
+    width: 100%;
+}
+
+h1, h3 {
+    font-family: var(--head-font);
+}
+
+.fa-circle-question {
+    cursor: pointer;
+    position: absolute;
+    right: 37.5%;
+    top: var(--spacing-small);
+}
+
+.modal-background {
+    align-items: center;
+    background-color: var(--background-color-modal);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all var(--duration-long);
+    visibility: hidden;
+    width: 100%;
+    z-index: 10;
+}
+
+.modal-background.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background-color: var(--background-color-base);
+    border: var(--border-width) solid var(--letter-box-shadow);
+    border-radius: var(--border-radius-medium);
+    color: var(--font-color-base);
+    display: none;
+    overflow-y: scroll;
+    padding: var(--spacing-xx-small);
+    position: relative;
+    transition: all var(--duration-long);
+}
+
+.guide {
+    width: 60%;
+}
+
+.ban-info {
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ban-info h4 {
+    font-size: var(--font-size-large);
+    font-style: italic;
+}
+
+.ban-confirmation {
+    display: inline-flex;
+    gap: var(--spacing-x-small);
+}
+
+.ban-info button {
+    background-color: var(--random-button-color);
+    border: none;
+    border-radius: var(--border-radius-base);
+    box-shadow:
+        var(--shadow-width-small) var(--shadow-width-small) var(--random-button-lower-shadow),
+        var(--shadow-width-small) var(--shadow-width-small) var(--random-button-upper-shadow) inset;
+    display: block;
+    margin: var(--spacing-medium) auto;
+    padding: var(--spacing-xx-small) var(--spacing-small);
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal span {
+    font-weight: bold;
+}
+
+.close {
+    height: var(--close-button-size);
+    position: absolute;
+    right: var(--spacing-xx-small);
+    top: var(--spacing-xx-small);
+    width: var(--close-button-size);
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.close span {
+    background-color: var(--font-color-base);
+    border-radius: var(--border-radius-max);
+    display: block;
+    height: var(--close-button-height);
+    position: absolute;
+    right: var(--spacing-xx-small);
+    top: var(--spacing-xx-small);
+    width: var(--close-button-width);
+}
+
+.close span:first-of-type {
+    top: var(--spacing-small);
+    transform: rotate(-45deg);
+}
+
+.close span:last-of-type {
+    top: var(--spacing-small);
+    transform: rotate(45deg);
+}
+
+h2 {
+    font-family: var(--team-logo-font);
+}
+
+.team {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xx-small);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    transition: transform var(--duration-medium);
+    width: 20%;
+}
+
+.team.team1 {
+    background-color: var(--team1-background-color);
+    left: 0;
+    transform: translateX(-20%);
+}
+
+.team.team2 {
+    background-color: var(--team2-background-color);
+    right: 0;
+    transform: translateX(20%);
+}
+
+.team.active {
+    transform: translateX(0);
+}
+
+.team-logo {
+    border: none;
+    color: var(--font-color-base);
+    display: inline-block;
+    font-style: italic;
+    padding: var(--spacing-xx-small) var(--spacing-x-small);
+}
+
+.team-logo.team1 {
+    background-color: var(--team1-logo-background);
+    box-shadow: var(--spacing-xx-small) var(--spacing-xx-small) var(--team1-logo-shadow);
+}
+
+.team-logo.team2 {
+    background-color: var(--team2-logo-background);
+    box-shadow: var(--spacing-xx-small) var(--spacing-xx-small) var(--team2-logo-shadow);
+}
+
+.picked-letters {
+    color: var(--font-color-base);
+    display: grid;
+    gap: var(--spacing-x-small);
+    grid-template-columns: repeat(2, var(--letter-box-size));
+}
+
+.picked-letter,
+.banned-letter {
+    background-color: var(--letter-box-background);
+    border: var(--highlight-border-width) solid transparent;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-width-large) var(--shadow-width-large) var(--letter-box-shadow);
+    display: grid;
+    font-size: var(--font-size-x-large);
+    height: var(--letter-box-size);
+    place-items: center;
+    transition:
+        background-color var(--duration-medium),
+        border var(--duration-long);
+    width: var(--letter-box-size);
+}
+
+.picked-letter.pop {
+    animation: pop var(--duration-medium);
+}
+
+.highlighted {
+    border: var(--highlight-border-width) solid var(--highlight-color);
+}
+
+h3 {
+    font-size: var(--font-size-large);
+}
+
+.time-limit {
+    font-size: var(--font-size-x-large);
+}
+
+.time-limit.hurryup {
+    color: var(--font-color-danger);
+}
+
+.time-limit.pop {
+    animation: pop var(--duration-medium);
+}
+
+.banned-letters {
+    color: var(--font-color-base);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-x-small);
+}
+
+.fa-ban {
+    color: var(--font-color-danger);
+    transform: translateX(var(--spacing-medium));
+}
+
+.letter,
+.progress {
+    background-color: var(--letter-button-color);
+    border: none;
+    border-radius: var(--border-radius-base);
+    box-shadow:
+        var(--shadow-width-small) var(--shadow-width-small) var(--letter-button-lower-shadow),
+        var(--shadow-width-small) var(--shadow-width-small) var(--letter-button-upper-shadow) inset;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    font-weight: bold;
+}
+
+.letter {
+    height: var(--letter-button-size);
+    width: var(--letter-button-size);
+}
+
+button {
+    color: var(--font-color-base);
+    transition: 
+        background-color var(--duration-medium),
+        opacity var(--duration-medium);
+}
+
+button:hover {
+    opacity: var(--opacity-base);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(var(--shadow-width-small));
+}
+
+button:disabled {
+    background-color: var(--letter-button-color-disabled);
+    box-shadow:
+        var(--shadow-width-small) var(--shadow-width-small) var(--letter-button-color-lower-shadow-disabled),
+        var(--shadow-width-small) var(--shadow-width-small) var(--letter-button-color-upper-shadow-disabled) inset;
+    cursor: default;
+    opacity: var(--opacity-base);
+    pointer-events: none;
+}
+
+.letter-button-wrapper {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: var(--spacing-xx-small);
+}
+
+.lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xx-small);
+    justify-content: space-between;
+}
+
+.others {
+    justify-content: flex-start;
+}
+
+.progress {
+    background-color: var(--random-button-color);
+    box-shadow:
+        var(--shadow-width-small) var(--shadow-width-small) var(--random-button-lower-shadow),
+        var(--shadow-width-small) var(--shadow-width-small) var(--random-button-upper-shadow) inset;
+    display: block;
+    font-size: var(--font-size-small);
+    font-weight: normal;
+    margin: 0 auto;
+    padding: var(--spacing-xx-small) var(--spacing-x-small);
+}

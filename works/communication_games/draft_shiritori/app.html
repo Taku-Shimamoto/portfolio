@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../../../css/draft_shiritori.css" />
+        <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
+        <script src="../../../js/draft_shiritori.js" defer></script>
+        <title>ドラフトしりとリレー</title>
+    </head>
+    <body>
+        <main>
+            <h1 id="current_mode"></h1>
+            <i class="fa-solid fa-circle-question" id="guide"></i>
+            <div id="modal_background" class="modal-background">
+                <div class="modal guide" id="guide_modal"></div>
+                <div class="modal ban-info" id="ban_info"></div>
+            </div>
+            <div class="team team1" id="team1">
+                <h2 class="team-logo team1">Team 1</h2>
+                <div class="picked-letters team1" id="team1_picked_letters"></div>
+            </div>
+            <div class="team team2" id="team2">
+                <h2 class="team-logo team2">Team 2</h2>
+                <div class="picked-letters team2" id="team2_picked_letters"></div>
+            </div>
+            <h3 class="request-message" id="request_message"></h3>
+            <h3 class="time-limit" id="time_limit"></h3>
+            <div class="banned-letters" id="banned_letters"></div>
+            <div class="letter-button-wrapper">
+                <div class="lines a-line-letters">
+                    <button type="button" id="a" class="letter a-line">あ</button>
+                    <button type="button" id="i" class="letter a-line">い</button>
+                    <button type="button" id="u" class="letter a-line">う</button>
+                    <button type="button" id="e" class="letter a-line">え</button>
+                    <button type="button" id="o" class="letter a-line">お</button>
+                </div>
+                <div class="lines ka-line-letters">
+                    <button type="button" id="ka" class="letter ka-line">か</button>
+                    <button type="button" id="ki" class="letter ka-line">き</button>
+                    <button type="button" id="ku" class="letter ka-line">く</button>
+                    <button type="button" id="ke" class="letter ka-line">け</button>
+                    <button type="button" id="ko" class="letter ka-line">こ</button>
+                </div>
+                <div class="lines sa-line-letters">
+                    <button type="button" id="sa" class="letter sa-line">さ</button>
+                    <button type="button" id="shi" class="letter sa-line">し</button>
+                    <button type="button" id="su" class="letter sa-line">す</button>
+                    <button type="button" id="se" class="letter sa-line">せ</button>
+                    <button type="button" id="so" class="letter sa-line">そ</button>
+                </div>
+                <div class="lines ta-line-letters">
+                    <button type="button" id="ta" class="letter ta-line">た</button>
+                    <button type="button" id="chi" class="letter ta-line">ち</button>
+                    <button type="button" id="tsu" class="letter ta-line">つ</button>
+                    <button type="button" id="te" class="letter ta-line">て</button>
+                    <button type="button" id="to" class="letter ta-line">と</button>
+                </div>
+                <div class="lines na-line-letters">
+                    <button type="button" id="na" class="letter na-line">な</button>
+                    <button type="button" id="ni" class="letter na-line">に</button>
+                    <button type="button" id="nu" class="letter na-line">ぬ</button>
+                    <button type="button" id="ne" class="letter na-line">ね</button>
+                    <button type="button" id="no" class="letter na-line">の</button>
+                </div>
+                <div class="lines ha-line-letters">
+                    <button type="button" id="ha" class="letter ha-line">は</button>
+                    <button type="button" id="hi" class="letter ha-line">ひ</button>
+                    <button type="button" id="fu" class="letter ha-line">ふ</button>
+                    <button type="button" id="he" class="letter ha-line">へ</button>
+                    <button type="button" id="ho" class="letter ha-line">ほ</button>
+                </div>
+                <div class="lines ma-line-letters">
+                    <button type="button" id="ma" class="letter ma-line">ま</button>
+                    <button type="button" id="mi" class="letter ma-line">み</button>
+                    <button type="button" id="mu" class="letter ma-line">む</button>
+                    <button type="button" id="me" class="letter ma-line">め</button>
+                    <button type="button" id="mo" class="letter ma-line">も</button>
+                </div>
+                <div class="lines ya-line-letters">
+                    <button type="button" id="ya" class="letter ya-line">や</button>
+                    <button type="button" id="yu" class="letter ya-line">ゆ</button>
+                    <button type="button" id="yo" class="letter ya-line">よ</button>
+                </div>
+                <div class="lines ra-line-letters">
+                    <button type="button" id="ra" class="letter ra-line">ら</button>
+                    <button type="button" id="ri" class="letter ra-line">り</button>
+                    <button type="button" id="ru" class="letter ra-line">る</button>
+                    <button type="button" id="re" class="letter ra-line">れ</button>
+                    <button type="button" id="ro" class="letter ra-line">ろ</button>
+                </div>
+                <div class="lines wa-line-letters">
+                    <button type="button" id="wa" class="letter wa-line">わ</button>
+                    <button type="button" id="wo" class="letter wa-line">を</button>
+                </div>
+                <div class="lines others">
+                    <button type="button" id="n" class="letter other-line">ん</button>
+                    <button type="button" id="-" class="letter other-line">ー</button>
+                </div>
+            </div>
+            <button type="button" id="progress" class="progress"></button>
+        </main>
+    </body>
+</html>

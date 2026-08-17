@@ -1017,7 +1017,7 @@ function showTheSameWorkImg() {
 function changeWorkImg() {
     document.querySelector(".gallery-pic:nth-of-type(3) img").src = "images/shimamoto.png";
     document.querySelector(".gallery-pic:nth-of-type(3) h4").textContent = "今回の仕掛け人";
-    document.querySelector(".gallery-pic:nth-of-type(3) p").textContent = "今回の仕掛け人は島本でした。こんな理不尽な異変ばかりつくる人を許してはいけません。";
+    document.querySelector(".gallery-pic:nth-of-type(3) p").textContent = "今回の仕掛け人は島本でした。今日に限って実習でいないなんて...。";
 }
 
 // 作品画像が回転する

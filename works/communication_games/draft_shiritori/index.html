@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="../../../css/common.css" />
+        <link rel="stylesheet" href="../../../css/app_detail.css" />
+        <link rel="stylesheet" href="../../../css/prism.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://kit.fontawesome.com/27cbb9919d.js" crossorigin="anonymous"></script>
+        <script src="../../../js/app_detail.js" defer></script>
+        <script src="../../../js/prism.js"></script>
+        <title>ドラフトしりとリレー 詳細ページ| Taku Shimamoto's Portfolio</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="header-left">
+                <a href="../../../index.html">
+                    <span>Taku</span>
+                    <span>Shimamoto</span>
+                </a>
+            </h1>
+            <nav class="header-right">
+                <ul class="menu-list">
+                    <li class="menu"><a href="#">Top</a></li>
+                    <li class="menu"><a href="../../../index.html#profile">Profile</a></li>
+                    <li class="menu"><a href="../../../index.html#works">Works</a></li>
+                    <li class="menu"><a href="../../../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <nav class="breadcrumb-list">
+                <a href="../../../index.html">Home</a> &gt; <a href="../../index.html">Works</a> &gt; <a href="../index.html">Communication Game Apps</a> &gt; ドラフトしりとリレー
+            </nav>
+            <div class="slider-outside">
+                <div class="slider-wrapper">
+                    <p id="prev" class="arrow prev">&lt;</p>
+                    <p id="next" class="arrow next">&gt;</p>
+                    <a href="app.html" target="_blank" rel="noopener noreferrer">
+                        <div id="slider_track" class="slider-track">
+                            <img src="../../../images/draft_shiritori01.png" alt="" />
+                            <img src="../../../images/draft_shiritori02.png" alt="" />
+                            <img src="../../../images/draft_shiritori03.png" alt="" />
+                            <img src="../../../images/draft_shiritori04.png" alt="" />
+                            <img src="../../../images/draft_shiritori05.png" alt="" />
+                            <img src="../../../images/draft_shiritori06.png" alt="" />
+                            <img src="../../../images/draft_shiritori07.png" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <button type="button" class="button" id="view">View App</button>
+            <section>
+                <h3>ゲーム内容</h3>
+                <h4>ゲーム説明</h4>
+                    <p>
+                        ありそうでなかった「<span class="bold">ひらがなのドラフト指名</span>」！
+                    </p>
+                    <p>
+                        チーム対抗戦形式のしりとりリレーでその速さを競うゲームです。ただし、チームが使う文字はドラフト制で決定！
+                    </p>
+                    <p>
+                        ひらがなだからこそ覚えやすく遊びやすい。ひらがなだからこそ戦略の幅が広く奥深い。シンプルイズベストの最高到達点を目指しました！
+                    </p>
+                <h4>主目的</h4>
+                <ul>
+                    <li>チーム内で誰がどの文字を担当するかを臨機応変に決め、その役割を遂行する(役割遂行)</li>
+                    <li>どの文字を選び、どの文字をBANするかを話し合い決定する(戦略、コンセンサス)</li>
+                    <li>与えられた文字しか使えない状況で、制限時間内にその状況に合う言葉選びをする(ひらめき力)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>遊び方</h3>
+                <h4>推奨人数</h4>
+                <p>
+                    10人(8人～14人まで対応)
+                </p>
+                <h4>所要時間</h4>
+                <p>
+                    1ラウンド約5分
+                </p>
+                <h4>
+                    必要なもの
+                </h4>
+                <ul>
+                    <li>本ゲームアプリ</li>
+                    <li>ホワイトボード</li>
+                    <li>水性ペン</li>
+                    <li>ひらがなの書かれたカード(「あ」～「ん」まで2枚ずつ ※なくても十分に楽しめます)</li>
+                </ul>
+                <h4>手順</h4>
+                <h5>通常モード(練習用)</h5>
+                <ol>
+                    <li>
+                        BANフェーズ: ランダムで4文字が使用禁止として選ばれます。
+                        <p>
+                            ※通常モードにおいてはあまり意味を持ちませんが、ドラフトモードへの導線として、形式上BANピックを行います。
+                        </p>
+                    </li>
+                    <li>
+                        文字選択フェーズ: 各チームで人数+1個の文字がランダムで選ばれます。
+                        <p>
+                            選ばれた文字と同じひらがなカードを引きます。
+                        </p>
+                    </li>
+                    <li>
+                        シンキングタイム: 30秒のシンキングタイムをとります。
+                        <p>
+                            この間はチームで話し合ったり、ひらがなカードを並べ替えたりすることができますが、ホワイトボードに書くことは禁止です。
+                        </p>
+                    </li>
+                    <li>
+                        しりとりリレー開始: 90秒以内に、ホワイトボードを使い、しりとりリレーを完成させましょう。
+                        <ul>
+                            <li>与えられた文字をすべて使い切ります。</li>
+                            <li>誰が、どの文字を、どの順番で使用しても構いません。</li>
+                            <li>「ん」または「ー」を持っている場合、必ず最後に使用します。</li>
+                            <li>順番変更、書き直しは何度でもできます。</li>
+                        </ul>
+                        <p>
+                            例：「し」「ま」「も」「と」「た」「く」の6文字が与えられた場合
+                        </p>
+                        <p>
+                            <span class="bold">た</span>いい<span class="bold">く</span> → <span class="bold">く</span>ちば<span class="bold">し</span> → <span class="bold">し</span>ろく<span class="bold">ま</span> → <span class="bold">ま</span>り<span class="bold">も</span> → <span class="bold">も</span>るもっ<span class="bold">と</span>
+                        </p>
+                        <p>
+                            でリレーが完成します。
+                        </p>
+                    </li>
+                    <li>
+                        ポイント集計: 90秒以内にホワイトボードに書いた単語の数のぶんだけポイントになります。
+                        <p>90秒以内に両チームともリレーを完成させた場合は、はやった方に追加で1ポイントが与えられます。</p>
+                    </li>
+                </ol>
+                <h5>ドラフトモード(ルールに慣れたらこちらに移行)</h5>
+                <ol>
+                    <li>ランダム文字選択フェーズ: 各チームにランダムで選ばれた1文字が与えられます。</li>
+                    <li>BANフェーズ: 各チームは2文字ずつ、合計4文字を使用禁止として選びます。選ばれた文字はそのラウンド中、両チームとも使用できません。</li>
+                    <li>文字選択フェーズ: 各チームは交互に1～2文字ずつ選びます。</li>
+                    <li>シンキングタイム: 通常モードと同じです。</li>
+                    <li>しりとりリレー開始: 通常モードと同じです。</li>
+                    <li>ポイント集計: 通常モードと同じです。</li>
+                </ol>
+            </section>
+            <section>
+                <h3>作者コメント</h3>
+                <h4>ゲームを振り返って</h4>
+                <p>
+                    これから実施します。
+                </p>
+                <h4>制作を振り返って</h4>
+                <p>
+                    このゲームはこれまで作ったどのゲームアプリやスクリプトよりも難しく、時間のかかるものでした。しかし、制作過程で得られた学びもその分とても大きいものでした。
+                </p>
+                <p>
+                    このゲームにおいての核となる部分は「状態管理」です。モード、フェーズ、チーム、ピック状況、タイマーなど、いくつもの状態が入り組んでおり、しかもゲームの進行に合わせて頻繁に変化していきます。これらの状態をどのように制御するのか、というのがこのゲームの実装における課題であることは、制作開始からすぐに分かりました。
+                </p>
+                <h5>Before</h5>
+                <pre><code class="language-js"><!--
+-->// (例) チーム名を呼び出したいとき、チームが切り替わると、その都度元データの参照も変えなければならない
+// これがかなり手間がかかる上、不具合が起きたときにどこの状態管理に原因があるのかを追求するのが大変...
+const TEAMS = {
+    team1: {
+        name: "チーム1",
+        ...,
+    },
+    team2: {
+        name: "チーム2",
+        ...,
+    },
+};
+
+let currentTeam = "team1";
+let currentTeamName = TEAMS[currentTeam].name;
+
+currentTeam = "team2";
+currentTeamName = TEAMS[currentTeam].name;  // これがないとUIや参照は「チーム1」のまま<!--
+                --></code></pre>
+                <h5>After</h5>
+                <pre><code class="language-js"><!--
+-->const gameStates = {
+    currentTeam: "team1",
+
+    get team() {
+        return TEAMS[this.currentTeam];
+    },
+};
+
+function switchTeam() {
+    gameStates.currentTeam = gameStates.currentTeam === "team1" ? "team2" : "team1";
+}
+
+const currentTeamName = gameStates.team.name;<!--
+                --></code></pre>
+                <p>
+                    この課題を打破したのは、オブジェクトにおける「ゲッター」という概念でした。オブジェクトが呼び出されるたびに、定義されたゲッター関数によって参照が最新の状態に更新されるようになります。状態管理の責務はすべて各ゲッター関数とそれらをまとめるgameStatesの中に閉じ込められるため、ステップ処理やチーム切り替えについての不具合の原因特定がしやすくなります。制作過程で新たなステップ処理や状態を追加することがあった際も、gameStatesに状態やゲッターを追加することが基本となるため、保守性と拡張性の面で大いにその恩恵を受けることになりました。
+                </p>
+            </section>
+        </main>
+        <footer>
+            Copyright &copy; 2026 Taku Shimamoto
+        </footer>
+    </body>
+</html>        
