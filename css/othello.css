@@ -1,175 +1,175 @@
 @import url(variables.css);
 
-        :root {
-            /* 盤面の縦横のマス数 */
-            --cell: 6;
+:root {
+    /* 盤面の縦横のマス数 */
+    --cell: 6;
 
-            /* 盤面1マスの大きさ */
-            --cell-size: 80px;
+    /* 盤面1マスの大きさ */
+    --cell-size: 80px;
 
-            /* 石の大きさ */
-            --stone-size: 64px;
+    /* 石の大きさ */
+    --stone-size: 64px;
 
-            /* デフォルトの影の色 */
-            --outer-shadow-color: #ccc;
-            --inner-shadow-color: #ddd;
-        }
+    /* デフォルトの影の色 */
+    --outer-shadow-color: #ccc;
+    --inner-shadow-color: #ddd;
+}
 
-        body {
-            transition: background-color .5s ease;
-        }
+body {
+    transition: background-color .5s ease;
+}
 
-        h1, h2, h3 {
-            font-family: "UD デジタル 教科書体 NP";
-        }
+h1, h2, h3 {
+    font-family: "UD デジタル 教科書体 NP";
+}
 
-        h1 {
-            margin-top: 100px;
-        }
+h1 {
+    margin-top: 100px;
+}
 
-        .qty {
-            display: none;
-            text-align: center;
-        }
+.qty {
+    display: none;
+    text-align: center;
+}
 
-        .color-button-wrapper {
-            display: flex;
-            gap: 16px;
-            height: var(--cell-size);
-            justify-content: center;
-            overflow-y: hidden;
-            transition: height .5s;
-        }
+.color-button-wrapper {
+    display: flex;
+    gap: 16px;
+    height: var(--cell-size);
+    justify-content: center;
+    overflow-y: hidden;
+    transition: height .5s;
+}
 
-        .color-button {
-            border: none;
-            border-radius: 50%;
-            height: var(--stone-size);
-            width: var(--stone-size)
-        }
+.color-button {
+    border: none;
+    border-radius: 50%;
+    height: var(--stone-size);
+    width: var(--stone-size)
+}
 
-        .color-button:hover {
-            opacity: .6;
-        }
+.color-button:hover {
+    opacity: .6;
+}
 
-        .board {
-            display: grid;
-            grid-template-columns: repeat(var(--cell), var(--cell-size));
-            grid-template-rows: repeat(var(--cell), var(--cell-size));
-            justify-content: center;
-        }
+.board {
+    display: grid;
+    grid-template-columns: repeat(var(--cell), var(--cell-size));
+    grid-template-rows: repeat(var(--cell), var(--cell-size));
+    justify-content: center;
+}
 
-        .stone-cell {
-            background-color: #efe;
-            border: 1px dotted #555;
-            display: grid;
-            place-items: center;
-        }
+.stone-cell {
+    background-color: #efe;
+    border: 1px dotted #555;
+    display: grid;
+    place-items: center;
+}
 
-        .stone-cell.selected {
-            border: 3px solid #f00;
-        }
+.stone-cell.selected {
+    border: 3px solid #f00;
+}
 
-        .stone-cell:hover {
-            background-color: #afa;
-        }
+.stone-cell:hover {
+    background-color: #afa;
+}
 
-        .stone {
-            border: 1px solid #aaa;
-            border-radius: 50%;
-            cursor: pointer;
-            height: var(--stone-size);
-            transition-property: background-color, transform;
-            transition-duration: 0s, .8s;
-            transition-delay: .4s, 0s;
-            width: var(--stone-size);
-        }
+.stone {
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    height: var(--stone-size);
+    transition-property: background-color, transform;
+    transition-duration: 0s, .8s;
+    transition-delay: .4s, 0s;
+    width: var(--stone-size);
+}
 
-        .empty {
-            background-color: #eee;
-        }
+.empty {
+    background-color: #eee;
+}
 
-        .red {
-            transform: rotateY(540deg);
-        }
+.red {
+    transform: rotateY(540deg);
+}
 
-        .blue {
-            transform: rotateY(1080deg);
-        }
+.blue {
+    transform: rotateY(1080deg);
+}
 
-        .black {
-            transform: rotateY(540deg);
-        }
+.black {
+    transform: rotateY(540deg);
+}
 
-        .white {
-            transform: rotateY(1080deg);
-        }
+.white {
+    transform: rotateY(1080deg);
+}
 
-        .modal-background {
-            background-color: #000c;
-            display: grid;
-            height: 100vh;
-            left: 0;
-            opacity: 0;
-            place-items: center;
-            position: fixed;
-            top: 0;
-            transition: all .8s;
-            visibility: hidden;
-            width: 100%;
-            z-index: 30;
-        }
+.modal-background {
+    background-color: #000c;
+    display: grid;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    transition: all .8s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 30;
+}
 
-        .modal-background.open {
-            opacity: 1;
-            visibility: visible;
-        }
+.modal-background.open {
+    opacity: 1;
+    visibility: visible;
+}
 
-        .modal {
-            background-color: #fff;
-            border: 8px solid #ccc;
-            border-radius: 20px;
-            padding: 16px;
-            position: relative;
-            transition: all .8s;
-            width: 400px;
-            z-index: 40;
-        }
+.modal {
+    background-color: #fff;
+    border: 8px solid #ccc;
+    border-radius: 20px;
+    padding: 16px;
+    position: relative;
+    transition: all .8s;
+    width: 400px;
+    z-index: 40;
+}
 
-        .close {
-            height: 48px;
-            position: absolute;
-            right: 8px;
-            top: 4px;
-            width: 48px;
-        }
+.close {
+    height: 48px;
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    width: 48px;
+}
 
-        .close:hover {
-            cursor: pointer;
-        }
+.close:hover {
+    cursor: pointer;
+}
 
-        .close span {
-            background-color: #000;
-            border-radius: 50px;
-            display: block;
-            height: 2px;
-            position: absolute;
-            right: 8px;
-            top: 4px;
-            width: 32px;
-        }
+.close span {
+    background-color: #000;
+    border-radius: 50px;
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    width: 32px;
+}
 
-        .close span:nth-of-type(1) {
-            top: 24px;
-            transform: rotate(-45deg);
-        }
+.close span:nth-of-type(1) {
+    top: 24px;
+    transform: rotate(-45deg);
+}
 
-        .close span:nth-of-type(2) {
-            top: 24px;
-            transform: rotate(45deg);
-        }
+.close span:nth-of-type(2) {
+    top: 24px;
+    transform: rotate(45deg);
+}
 
-        h3 {
-            font-size: 32px;
-            text-align: center;
-        }
+h3 {
+    font-size: 32px;
+    text-align: center;
+}

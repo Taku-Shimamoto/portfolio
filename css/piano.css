@@ -26,150 +26,150 @@
     padding-top: var(--space-large);
 }
 
-            .keyboard {
-                background-color: #000;
-                border-radius: 0 0 20px 20px;
-                margin: 0 auto;
-                padding-bottom: 10px;
-                width: 600px;
-                z-index: 1;
-            }
+.keyboard {
+    background-color: #000;
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 600px;
+    z-index: 1;
+}
 
-            .current-sound {
-                background-color: lightyellow;
-                border-radius: 10px;
-                color: brown;
-                font-size: 28px;
-                height: 50px;
-                line-height: 50px;
-                margin: 50px auto 10px auto;
-                text-align: center;
-                width: 20%;
-            }
+.current-sound {
+    background-color: lightyellow;
+    border-radius: 10px;
+    color: brown;
+    font-size: 28px;
+    height: 50px;
+    line-height: 50px;
+    margin: 50px auto 10px auto;
+    text-align: center;
+    width: 20%;
+}
 
-            .buttons {
-                text-align: center;
-            }
+.buttons {
+    text-align: center;
+}
 
-            .border {
-                background-color: olive;
-                height: 5px;
-                margin: 35px 0;
-                transform: skewY(1deg);
-                width: 100%;
-            }
+.border {
+    background-color: olive;
+    height: 5px;
+    margin: 35px 0;
+    transform: skewY(1deg);
+    width: 100%;
+}
 
-            .sounds {
-                height: 210px;
-                margin-bottom: 10px;
-                position: relative;
-                text-align: center;
-            }
+.sounds {
+    height: 210px;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
 
-            .sounds p {
-                margin-top: 150px;
-            }
+.sounds p {
+    margin-top: 150px;
+}
 
-            .natural {
-                background-color: #fff;
-                border: 1px solid #000;
-                border-radius: 5px;
-                box-shadow: 0 3px gray;
-                cursor: pointer;
-                display: inline-block;
-                font-size: 24px;
-                height: 200px;
-                margin: 0 auto;
-                width: 60px;
-                z-index: 1;
-            }
+.natural {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 3px gray;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
+    height: 200px;
+    margin: 0 auto;
+    width: 60px;
+    z-index: 1;
+}
 
-            .natural:hover {
-                background-color: lightgray;
-            }
+.natural:hover {
+    background-color: lightgray;
+}
 
-            .natural:active,
-            input:active {
-                box-shadow: none;
-                transform: translateY(3px);
-            }
+.natural:active,
+input:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
 
-            .active,
-            .active:hover {
-                background-color: yellow;
-                box-shadow: none;
-                transform: translateY(3px);
-            }
+.active,
+.active:hover {
+    background-color: yellow;
+    box-shadow: none;
+    transform: translateY(3px);
+}
 
-            .sharp {
-                background-color: #222;
-                border-radius: 3px;
-                box-shadow: 0 1px #444;
-                display: inline-block;
-                height: 120px;
-                position: absolute;
-                top: 0px;
-                transform: translateX(-25px);
-                width: 45px;
-                z-index: 2;
-            }
+.sharp {
+    background-color: #222;
+    border-radius: 3px;
+    box-shadow: 0 1px #444;
+    display: inline-block;
+    height: 120px;
+    position: absolute;
+    top: 0px;
+    transform: translateX(-25px);
+    width: 45px;
+    z-index: 2;
+}
 
-            .sharp p {
-                color: #fff;
-                font-size: 12px;
-                transform: translateY(-55px);
-            }
+.sharp p {
+    color: #fff;
+    font-size: 12px;
+    transform: translateY(-55px);
+}
 
-            .sharp:hover {
-                background-color: #444;
-            }
+.sharp:hover {
+    background-color: #444;
+}
 
-            .sharp:active {
-                box-shadow: none;
-                top: 1px;
-            }
+.sharp:active {
+    box-shadow: none;
+    top: 1px;
+}
 
-            .sharp_active,
-            .sharp_active:hover {
-                background-color: olive;
-                box-shadow: none;
-                top: 1px;
-            }
+.sharp_active,
+.sharp_active:hover {
+    background-color: olive;
+    box-shadow: none;
+    top: 1px;
+}
 
-            .btn {
-                border: none;
-                border-radius: 50px;
-                cursor: pointer;
-                font-size: 18px;
-                letter-spacing: .05em;
-                margin: 0 5px;
-                padding: 10px 20px;
-            }
+.btn {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: .05em;
+    margin: 0 5px;
+    padding: 10px 20px;
+}
 
-            .autoplay {
-                background-color: lightgreen;
-                box-shadow: 0 3px darkgreen;
-            }
+.autoplay {
+    background-color: lightgreen;
+    box-shadow: 0 3px darkgreen;
+}
 
-            .stop {
-                background-color: lightcoral;
-                box-shadow: 0 3px darkred;
-            }
+.stop {
+    background-color: lightcoral;
+    box-shadow: 0 3px darkred;
+}
 
-            .on {
-                background-color: lemonchiffon;
-                box-shadow: 0 3px olive;                
-            }
+.on {
+    background-color: lemonchiffon;
+    box-shadow: 0 3px olive;                
+}
 
-            .off {
-                background-color: lightblue;
-                box-shadow: 0 3px navy;
-            }
+.off {
+    background-color: lightblue;
+    box-shadow: 0 3px navy;
+}
 
-            .btn:hover {
-                opacity: .9;
-            }
+.btn:hover {
+    opacity: .9;
+}
 
-            .disabled {
-                pointer-events: none;
-            }
+.disabled {
+    pointer-events: none;
+}

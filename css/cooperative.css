@@ -1,141 +1,141 @@
 @import url(variables.css);
 
-            h1, h2 {
-                font-family: "UD デジタル 教科書体 NP";
-            }
+h1, h2 {
+    font-family: "UD デジタル 教科書体 NP";
+}
 
-            h1 span,
-            h2 span {
-                color: #f00;
-            }
+h1 span,
+h2 span {
+    color: #f00;
+}
 
-            fieldset {
-                width: 360px;
-            }
+fieldset {
+    width: 360px;
+}
 
-            .toggle {
-                cursor: pointer;
-                position: fixed;
-                right: 16px;
-                top: 16px;
-                z-index: 30;
-            }
+.toggle {
+    cursor: pointer;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 30;
+}
 
-            .toggle:hover {
-                font-weight: bold;
-                text-decoration: underline;
-            }
+.toggle:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-            nav {
-                border-left: 1px solid #000;
-                height: 100vh;
-                position: fixed;
-                right: -20%;
-                top: 0;
-                transition: all .5s;
-                width: 20%;
-                z-index: 20;
-            }
+nav {
+    border-left: 1px solid #000;
+    height: 100vh;
+    position: fixed;
+    right: -20%;
+    top: 0;
+    transition: all .5s;
+    width: 20%;
+    z-index: 20;
+}
 
-            nav h3 {
-                margin-top: 80px;
-                padding-left: 8px;
-            }
+nav h3 {
+    margin-top: 80px;
+    padding-left: 8px;
+}
 
-            nav ol {
-                line-height: 200%;
-                overflow: auto;
-            }
+nav ol {
+    line-height: 200%;
+    overflow: auto;
+}
 
-            nav.active {
-                right: 0;
-            }
-            
-            .game-display,
-            .status-table {
-                display: none;
-            }
+nav.active {
+    right: 0;
+}
 
-            h2 {
-                margin-bottom: 0;
-                text-align: center;
-            }
+.game-display,
+.status-table {
+    display: none;
+}
 
-            .button-wrapper,
-            .status-wrapper,
-            .vote-button-wrapper {
-                align-items: center;
-                display: flex;
-                gap: 5px;
-                justify-content: center;
-            }
+h2 {
+    margin-bottom: 0;
+    text-align: center;
+}
 
-            .status {
-                border: 3px solid #000;
-                display: inline-block;
-                font-size: 20px;
-                height: 80px;
-                line-height: 80px;
-                text-align: center;
-                transition: border-color 1s ease;
-                width: 80px;
-            }
+.button-wrapper,
+.status-wrapper,
+.vote-button-wrapper {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
 
-            .status.highlighted:nth-of-type(1) {
-                border-color: #d00;
-            }
+.status {
+    border: 3px solid #000;
+    display: inline-block;
+    font-size: 20px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    transition: border-color 1s ease;
+    width: 80px;
+}
 
-            .status.highlighted:nth-of-type(2) {
-                border-color: #f00;
-            }
+.status.highlighted:nth-of-type(1) {
+    border-color: #d00;
+}
 
-            .status.highlighted:nth-of-type(3) {
-                border-color: #f77;
-            }
+.status.highlighted:nth-of-type(2) {
+    border-color: #f00;
+}
 
-            .status.highlighted:nth-of-type(4),
-            .status.highlighted:nth-of-type(5) {
-                border-color: #ff0;
-            }
+.status.highlighted:nth-of-type(3) {
+    border-color: #f77;
+}
 
-            .status.highlighted:nth-of-type(n+6) {
-                border-color: #0f0;
-            }
+.status.highlighted:nth-of-type(4),
+.status.highlighted:nth-of-type(5) {
+    border-color: #ff0;
+}
 
-            .status:nth-of-type(1) {
-                background-color: #000;
-                color: #fff;
-            }
+.status.highlighted:nth-of-type(n+6) {
+    border-color: #0f0;
+}
 
-            .status:nth-of-type(2) {
-                background-color: #777;
-            }
+.status:nth-of-type(1) {
+    background-color: #000;
+    color: #fff;
+}
 
-            .status:nth-of-type(3) {
-                background-color: #aaa;
-            }
+.status:nth-of-type(2) {
+    background-color: #777;
+}
 
-            .status:nth-of-type(4) {
-                background-color: #ccc;
-            }
+.status:nth-of-type(3) {
+    background-color: #aaa;
+}
 
-            .status:nth-of-type(6) {
-                background-color: #ffc;
-            }
+.status:nth-of-type(4) {
+    background-color: #ccc;
+}
 
-            .status:nth-of-type(7) {
-                background-color: #ffa;
-            }
+.status:nth-of-type(6) {
+    background-color: #ffc;
+}
 
-            .status:nth-of-type(8) {
-                background-color: #ff7;
-            }
+.status:nth-of-type(7) {
+    background-color: #ffa;
+}
 
-            li span {
-                color: #f00;
-                font-weight: bold;
-            }
+.status:nth-of-type(8) {
+    background-color: #ff7;
+}
 
-            .request {
-                text-align: center;
-            }
+li span {
+    color: #f00;
+    font-weight: bold;
+}
+
+.request {
+    text-align: center;
+}
