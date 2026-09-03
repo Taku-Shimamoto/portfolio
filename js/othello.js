@@ -25,6 +25,7 @@ const team1CountText = document.getElementById("team1_count");
 const team2CountText = document.getElementById("team2_count");
 const qtyText = document.getElementById("qty");
 const topicText = document.getElementById("topic");
+const answerText = document.getElementById("answer");
 
 // element
 const colorButtonWrapper = document.getElementById("color_button_wrapper");
@@ -35,6 +36,7 @@ const modalBackground = document.getElementById("modal_background");
 // button
 const emptyButton = document.getElementById("empty_button");
 const colorButtons = document.querySelectorAll(".color-button");
+const answerButton = doocument.getElementById("answer_button");
 const closeButton = document.getElementById("close");
 
 // Data
@@ -265,6 +267,7 @@ let currentTeam = null;
 let team1 = null;
 let team2 = null;
 let canMakeEmptyCell = false;
+let isVisible = false;
 
 // ボタン選択フェーズ
 function addButtonColor() {
@@ -387,27 +390,48 @@ function openTopic(stone, e, cell, i) {
         topicText.textContent = "";
         return;
     }
+
+    const isCenter =
+        i === centers[0] || i === centers[1] || i === centers[2] || i === centers[3];
+
+    if (isCenter) return;
         
     clearHighlight();
     cell.classList.add("selected");
 
-
+    // お題と答えをランダムで選ぶ
     const randomTopicIndex = Math.floor(Math.random() * TOPICS.length);
     const randomSelectedTopic = TOPICS[randomTopicIndex];
     const randomAnswerIndex = Math.floor(Math.random() * randomSelectedTopic.answers.length);
-    console.clear();
+    const randomSelectedAnswer = randomSelectedTopic.answers[randomAnswerIndex];
 
+    // 四つ角判定
     const isCorner = 
         i === corners[0] || i === corners[1] || i === corners[2] || i === corners[3];
+
+    answerButton.disabled = isCorner;
 
     if (isCorner) {
         topicText.textContent = "水平思考クイズ";
     } else {
-        console.log(`お題: 「${randomSelectedTopic.theme}」、答え: 「${randomSelectedTopic.answers[randomAnswerIndex]}」`);
         topicText.textContent = randomSelectedTopic.theme;
+        answerText.textContent = randomSelectedAnswer;
+    }
+
+    // 選ばれた答えを配列から削除
+    // 配列が0になったら、お題そのものを削除
+    randomSelectedTopic.answers.splice(randomAnswerIndex, 1);
+    if (randomSelectedTopic.answers.length === 0) {
+        randomSelectedTopic.splice(randomTopicIndex, 1);
     }
 
     openModal();
+}
+
+// 答えの表示/非表示
+function toggleAnswerVisibility() {
+    isVisible = isVisible ? false : true;
+    answerText.style.display = isVisible ? "none" : "block";
 }
 
 // 石の色を変更する
