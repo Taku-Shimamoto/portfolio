@@ -1,8 +1,10 @@
+// CSS変数の取得
+const rootStyle = window.getComputedStyle(document.documentElement);
+const n = Number(rootStyle.getPropertyValue("--cell").trim());
+
 // 盤面の生成(CSS変数を参照)
 function generateBoard() {
-    const rootStyle = window.getComputedStyle(document.documentElement);
-    const cell = Number(rootStyle.getPropertyValue("--cell").trim());
-    const repeatCount = cell ** 2;
+    const repeatCount = n ** 2;
     const boardElement = document.getElementById("board");
 
     boardElement.innerHTML = `
@@ -35,7 +37,7 @@ const emptyButton = document.getElementById("empty_button");
 const colorButtons = document.querySelectorAll(".color-button");
 const closeButton = document.getElementById("close");
 
-// 固定値
+// Data
 const COLOR_TABLE = {
     red: { 
         name: "赤",
@@ -78,7 +80,7 @@ const TOPICS = [
     },
     {
         theme: "動物の名前",
-        answers: ["犬", "猫", "ライオン", "ゾウ", "キリン", "パンダ", "ゴリラ", "うさぎ", "クジラ", "サメ",],
+        answers: ["犬", "猫", "ライオン", "ゾウ", "キリン", "パンダ", "ゴリラ", "キジ", "クジラ", "サメ",],
         isValid: true,
     },
     {
@@ -244,6 +246,21 @@ const TOPICS = [
 ];
 
 // 変数
+const h = Math.floor(n / 2);
+const corners = [
+    0,
+    n - 1,
+    n ** 2 - n,
+    n ** 2 - 1,
+];
+const centers = [
+    n * (h - 1) + (h - 1),
+    n * (h - 1) + h,
+    n * h + (h - 1),
+    n * h + h,
+];
+
+// 状態
 let currentTeam = null;
 let team1 = null;
 let team2 = null;
@@ -268,18 +285,18 @@ colorButtons.forEach((button) => button.addEventListener("click", (e) => {
     colorButtonWrapper.style.height = "0";
     qtyText.style.display = "block";
     
-    stones[14].classList.remove("empty");
-    stones[15].classList.remove("empty");
-    stones[20].classList.remove("empty");
-    stones[21].classList.remove("empty");
-    stones[14].classList.add("red");
-    stones[15].classList.add("blue");
-    stones[20].classList.add("blue");
-    stones[21].classList.add("red");
-    stones[14].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
-    stones[15].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
-    stones[20].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
-    stones[21].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
+    stones[centers[0]].classList.remove("empty");
+    stones[centers[1]].classList.remove("empty");
+    stones[centers[2]].classList.remove("empty");
+    stones[centers[3]].classList.remove("empty");
+    stones[centers[0]].classList.add(currentTeam);
+    stones[centers[1]].classList.add(COLOR_TABLE[currentTeam].opposite);
+    stones[centers[2]].classList.add(COLOR_TABLE[currentTeam].opposite);
+    stones[centers[3]].classList.add(currentTeam);
+    stones[centers[0]].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
+    stones[centers[1]].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
+    stones[centers[2]].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
+    stones[centers[3]].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
 
     countStones();
 }));
@@ -374,7 +391,22 @@ function openTopic(stone, e, cell, i) {
     clearHighlight();
     cell.classList.add("selected");
 
-    topicText.textContent = TOPICS[i];
+
+    const randomTopicIndex = Math.floor(Math.random() * TOPICS.length);
+    const randomSelectedTopic = TOPICS[randomTopicIndex];
+    const randomAnswerIndex = Math.floor(Math.random() * randomSelectedTopic.answers.length);
+    console.clear();
+
+    const isCorner = 
+        i === corners[0] || i === corners[1] || i === corners[2] || i === corners[3];
+
+    if (isCorner) {
+        topicText.textContent = "水平思考クイズ";
+    } else {
+        console.log(`お題: 「${randomSelectedTopic.theme}」、答え: 「${randomSelectedTopic.answers[randomAnswerIndex]}」`);
+        topicText.textContent = randomSelectedTopic.theme;
+    }
+
     openModal();
 }
 
