@@ -74,6 +74,10 @@ h1 {
     background-color: #afa;
 }
 
+.stone-cell.corner:hover {
+    background-color: #faa;
+}
+
 .stone {
     border: 1px solid #aaa;
     border-radius: 50%;
@@ -137,15 +141,12 @@ h1 {
 }
 
 .close {
+    cursor: pointer;
     height: 48px;
     position: absolute;
     right: 8px;
     top: 4px;
     width: 48px;
-}
-
-.close:hover {
-    cursor: pointer;
 }
 
 .close span {
@@ -176,4 +177,8 @@ h3 {
 
 .answer {
     display: none;
+}
+
+.answer.visible {
+    display: block;
 }

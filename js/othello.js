@@ -36,7 +36,7 @@ const modalBackground = document.getElementById("modal_background");
 // button
 const emptyButton = document.getElementById("empty_button");
 const colorButtons = document.querySelectorAll(".color-button");
-const answerButton = doocument.getElementById("answer_button");
+const answerButton = document.getElementById("answer_button");
 const closeButton = document.getElementById("close");
 
 // Data
@@ -78,172 +78,138 @@ const TOPICS = [
     {
         theme: "くだものの名前",
         answers: ["ぶどう", "レモン", "いちご", "スイカ", "メロン", "みかん", "りんご", "バナナ"],
-        isValid: true,
     },
     {
         theme: "動物の名前",
         answers: ["犬", "猫", "ライオン", "ゾウ", "キリン", "パンダ", "ゴリラ", "キジ", "クジラ", "サメ",],
-        isValid: true,
     },
     {
         theme: "和食の名前",
         answers: ["天ぷら", "おにぎり", "うどん", "そば", "肉じゃが", "親子丼", "茶碗蒸し", "味噌汁"],
-        isValid: true,
     },
     {
         theme: "洋食の名前",
         answers: ["ハンバーグ", "オムライス", "ナポリタン", "グラタン", "コロッケ", "ドリア", "カレーライス", "ビーフシチュー"],
-        isValid: true,
     },
     {
         theme: "中華料理の名前",
         answers: ["餃子", "チャーハン", "麻婆豆腐", "酢豚", "春巻き", "天津飯", "青椒肉絲", "回鍋肉"],
-        isValid: true,
     },
     {
         theme: "野菜の名前",
         answers: ["トマト", "きゅうり", "にんじん", "キャベツ", "大根", "じゃがいも", "玉ねぎ", "ピーマン"],
-        isValid: true,
     },
     {
         theme: "寿司ネタの名前",
         answers: ["まぐろ", "サーモン", "えび", "いくら", "うに", "たまご", "はまち", "ほたて"],
-        isValid: true,
     },
     {
         theme: "飲料の名前",
         answers: ["水", "コーラ", "オレンジジュース", "コーヒー", "紅茶", "緑茶", "牛乳", "スポーツドリンク"],
-        isValid: true,
     },
     {
         theme: "職業の名前",
         answers: ["医者", "教師", "警察官", "消防士", "看護師", "料理人", "美容師", "弁護士"],
-        isValid: true,
     },
     {
         theme: "虫の名前",
         answers: ["カブトムシ", "クワガタ", "セミ", "チョウ", "トンボ", "バッタ", "カマキリ", "テントウムシ"],
-        isValid: true,
     },
     {
         theme: "有名人の名前",
         answers: ["大谷翔平", "羽生結弦", "明石家さんま", "ビートたけし", "木村拓哉", "綾瀬はるか", "福山雅治", "イチロー"],
-        isValid: true,
     },
     {
         theme: "キャラクターの名前",
         answers: ["ドラえもん", "ピカチュウ", "ミッキーマウス", "アンパンマン", "孫悟空", "ルフィ", "マリオ", "スヌーピー"],
-        isValid: true,
     },
     {
         theme: "飲食チェーン店の名前",
         answers: ["マクドナルド", "すき家", "吉野家", "松屋", "サイゼリヤ", "ガスト", "くら寿司", "丸亀製麺"],
-        isValid: true,
     },
     {
         theme: "ボードゲームの名前",
         answers: ["人生ゲーム", "オセロ", "将棋", "囲碁", "チェス", "モノポリー", "UNO", "すごろく"],
-        isValid: true,
     },
     {
         theme: "デザートの名前",
         answers: ["プリン", "ケーキ", "アイスクリーム", "パフェ", "ゼリー", "シュークリーム", "パンケーキ", "ティラミス"],
-        isValid: true,
     },
     {
         theme: "お菓子の名前",
         answers: ["ポテトチップス", "チョコレート", "クッキー", "ポッキー", "じゃがりこ", "せんべい", "グミ", "キャラメル"],
-        isValid: true,
     },
     {
         theme: "文房具の名前",
         answers: ["鉛筆", "消しゴム", "ボールペン", "ノート", "定規", "はさみ", "のり", "ホッチキス"],
-        isValid: true,
     },
     {
         theme: "スポーツの名前",
         answers: ["サッカー", "野球", "バスケットボール", "テニス", "水泳", "卓球", "バレーボール", "ゴルフ"],
-        isValid: true,
     },
     {
         theme: "花の名前",
         answers: ["桜", "ひまわり", "チューリップ", "バラ", "コスモス", "あじさい", "たんぽぽ", "すみれ"],
-        isValid: true,
     },
     {
         theme: "乗り物の名前",
         answers: ["電車", "新幹線", "自動車", "バス", "飛行機", "船", "自転車", "バイク"],
-        isValid: true,
     },
     {
         theme: "学校にあるもの",
         answers: ["黒板", "机", "椅子", "教科書", "ランドセル", "体育館", "校庭", "給食"],
-        isValid: true,
     },
     {
         theme: "歴史上の人物",
         answers: ["織田信長", "豊臣秀吉", "徳川家康", "坂本龍馬", "聖徳太子", "卑弥呼", "紫式部", "福沢諭吉"],
-        isValid: true,
     },
     {
         theme: "電化製品の名前",
         answers: ["テレビ", "冷蔵庫", "洗濯機", "電子レンジ", "掃除機", "エアコン", "ドライヤー", "炊飯器"],
-        isValid: true,
     },
     {
         theme: "自然現象の名前",
         answers: ["雨", "雪", "雷", "虹", "地震", "台風", "津波", "火山噴火"],
-        isValid: true,
     },
     {
         theme: "ケガや病気の名前",
         answers: ["風邪", "骨折", "やけど", "頭痛", "腹痛", "インフルエンザ", "捻挫", "花粉症"],
-        isValid: true,
     },
     {
         theme: "楽器の名前",
-        answers: ["ピアノ", "ギター", "ドラム", "バイオリン", "フルート", "トランペット", "サックス", "ハーモニカ"],
-        isValid: true,
+        answers: ["ピアノ", "ギター", "ドラム(太鼓でもOK)", "バイオリン", "フルート", "トランペット", "ハーモニカ"],
     },
     {
         theme: "コンビニで買えるもの",
         answers: ["おにぎり", "弁当", "サンドイッチ", "飲み物", "お菓子", "アイス", "雑誌", "ティッシュ"],
-        isValid: true,
     },
     {
         theme: "単位の名前",
         answers: ["メートル", "キログラム", "リットル", "台", "房", "冊"],
-        isValid: true,
     },
     {
         theme: "日用品の名前",
         answers: ["歯ブラシ", "タオル", "ティッシュ", "トイレットペーパー", "石けん", "シャンプー", "洗剤", "傘"],
-        isValid: true,
     },
     {
         theme: "春に関係あるもの",
         answers: ["桜", "入学式", "卒業式", "花見", "花粉症", "新学期", "たんぽぽ", "ひな祭り"],
-        isValid: true,
     },
     {
         theme: "夏に関係あるもの",
         answers: ["海", "プール", "花火", "夏祭り", "かき氷", "セミ", "ひまわり", "浴衣"],
-        isValid: true,
     },
     {
         theme: "秋に関係あるもの",
-        answers: ["紅葉", "栗", "さつまいも", "きのこ", "秋刀魚", "月見", "運動会", "ハロウィン"],
-        isValid: true,
+        answers: ["紅葉", "栗", "さつまいも", "きのこ", "秋刀魚", "月見", "ハロウィン"],
     },
     {
         theme: "冬に関係あるもの",
         answers: ["雪", "こたつ", "クリスマス", "お正月", "おでん", "鍋", "スキー", "雪だるま"],
-        isValid: true,
     },
     {
         theme: "人体に関係あるもの",
-        answers: ["頭", "目", "耳", "鼻", "口", "手", "足", "心臓"],
-        isValid: true,
+        answers: ["目", "耳", "鼻", "口", "手", "足", "心臓"],
     },
 ];
 
@@ -262,6 +228,12 @@ const centers = [
     n * h + h,
 ];
 
+// 固定値
+const UPPER_LEFT = 0;       // 左上のインデックス番号
+const UPPER_RIGHT = 1;      // 右上のインデックス番号
+const LOWER_LEFT = 2;       // 左下のインデックス番号
+const LOWER_RIGHT = 3;      // 右下のインデックス番号
+
 // 状態
 let currentTeam = null;
 let team1 = null;
@@ -279,7 +251,7 @@ function addButtonColor() {
 addButtonColor();
 
 // チームカラーの表示
-colorButtons.forEach((button) => button.addEventListener("click", (e) => {
+function decideTeamColors(e) {
     currentTeam = e.target.id;
     team1 = currentTeam;
     team2 = COLOR_TABLE[currentTeam].opposite;
@@ -288,21 +260,26 @@ colorButtons.forEach((button) => button.addEventListener("click", (e) => {
     colorButtonWrapper.style.height = "0";
     qtyText.style.display = "block";
     
-    stones[centers[0]].classList.remove("empty");
-    stones[centers[1]].classList.remove("empty");
-    stones[centers[2]].classList.remove("empty");
-    stones[centers[3]].classList.remove("empty");
-    stones[centers[0]].classList.add(currentTeam);
-    stones[centers[1]].classList.add(COLOR_TABLE[currentTeam].opposite);
-    stones[centers[2]].classList.add(COLOR_TABLE[currentTeam].opposite);
-    stones[centers[3]].classList.add(currentTeam);
-    stones[centers[0]].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
-    stones[centers[1]].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
-    stones[centers[2]].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
-    stones[centers[3]].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
+    for (let i = 0; i < centers.length; i ++) {
+        stones[centers[i]].classList.remove("empty");
+
+        if (i === UPPER_LEFT || i === LOWER_RIGHT) {
+            stones[centers[i]].classList.add(currentTeam);
+            stones[centers[i]].style.backgroundColor = COLOR_TABLE[team1].stoneColor;
+        } else {
+            stones[centers[i]].classList.add(COLOR_TABLE[currentTeam].opposite);
+            stones[centers[i]].style.backgroundColor = COLOR_TABLE[team2].stoneColor;
+        }
+    }
+
+    for (let i = 0; i < corners.length; i ++) {
+        stoneCells[corners[i]].classList.add("corner");
+    }
 
     countStones();
-}));
+}
+colorButtons.forEach((button) => button.addEventListener("click", (e) => decideTeamColors(e)));
+
 function showCurrentTeamColor(currentTeam) {
     teamColorText.textContent = COLOR_TABLE[currentTeam].name;
     teamColorText.style.color = COLOR_TABLE[currentTeam].textColor;
@@ -392,37 +369,37 @@ function openTopic(stone, e, cell, i) {
     }
 
     const isCenter =
-        i === centers[0] || i === centers[1] || i === centers[2] || i === centers[3];
+        i === centers[UPPER_LEFT] || i === centers[UPPER_RIGHT] || i === centers[LOWER_LEFT] || i === centers[LOWER_RIGHT];
 
     if (isCenter) return;
         
     clearHighlight();
     cell.classList.add("selected");
 
-    // お題と答えをランダムで選ぶ
-    const randomTopicIndex = Math.floor(Math.random() * TOPICS.length);
-    const randomSelectedTopic = TOPICS[randomTopicIndex];
-    const randomAnswerIndex = Math.floor(Math.random() * randomSelectedTopic.answers.length);
-    const randomSelectedAnswer = randomSelectedTopic.answers[randomAnswerIndex];
-
     // 四つ角判定
     const isCorner = 
-        i === corners[0] || i === corners[1] || i === corners[2] || i === corners[3];
+        i === corners[UPPER_LEFT] || i === corners[UPPER_RIGHT] || i === corners[LOWER_LEFT] || i === corners[LOWER_RIGHT];
 
     answerButton.disabled = isCorner;
 
     if (isCorner) {
         topicText.textContent = "水平思考クイズ";
     } else {
+        // お題と答えをランダムで選ぶ
+        const randomTopicIndex = Math.floor(Math.random() * TOPICS.length);
+        const randomSelectedTopic = TOPICS[randomTopicIndex];
+        const randomAnswerIndex = Math.floor(Math.random() * randomSelectedTopic.answers.length);
+        const randomSelectedAnswer = randomSelectedTopic.answers[randomAnswerIndex];
+
         topicText.textContent = randomSelectedTopic.theme;
         answerText.textContent = randomSelectedAnswer;
-    }
 
-    // 選ばれた答えを配列から削除
-    // 配列が0になったら、お題そのものを削除
-    randomSelectedTopic.answers.splice(randomAnswerIndex, 1);
-    if (randomSelectedTopic.answers.length === 0) {
-        randomSelectedTopic.splice(randomTopicIndex, 1);
+        // 選ばれた答えを配列から削除
+        // 配列が0になったら、お題そのものを削除
+        randomSelectedTopic.answers.splice(randomAnswerIndex, 1);
+        if (randomSelectedTopic.answers.length === 0) {
+            TOPICS.splice(randomTopicIndex, 1);
+        }
     }
 
     openModal();
@@ -430,9 +407,12 @@ function openTopic(stone, e, cell, i) {
 
 // 答えの表示/非表示
 function toggleAnswerVisibility() {
-    isVisible = isVisible ? false : true;
-    answerText.style.display = isVisible ? "none" : "block";
+    answerText.classList.toggle("visible");
+    isVisible = answerText.classList.contains("visible");
+    const buttonLabel = isVisible ? "答えを非表示" : "答えを表示";
+    answerButton.textContent = buttonLabel;
 }
+answerButton.addEventListener("click", toggleAnswerVisibility);
 
 // 石の色を変更する
 function changeStoneColor(e, stone) {
@@ -489,10 +469,11 @@ function openModal() {
 closeButton.addEventListener("click", closeModal);
 function closeModal() {
     modalBackground.classList.remove("open");
+    answerText.classList.remove("visible");
 }
 
 // keydownイベントの一括管理
-document.addEventListener("keydown", handleKeydownEvents);
+document.addEventListener("keydown", (e) => handleKeydownEvents(e));
 function handleKeydownEvents(e) {
     if (e.key === "Delete") startEmptyMode();
     if (e.key === "Enter" || e.key === " ") switchTeamColor();

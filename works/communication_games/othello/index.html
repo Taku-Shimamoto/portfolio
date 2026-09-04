@@ -185,7 +185,7 @@
                     実装当時、ショートカットキーと紐づけた関数switchTeamColor()、startEmptyMode()、escapeEmptyMode()のイベントリスナーがバラバラに書かれていました。このとき、「3つくらいなら追えるかもしれないけど、数が多くなったときのためにイベントリスナーの一覧表のようなものが欲しい」と思い考えた結果、ラッパー関数を置いた現在の形になりました。
                 </p>
                 <pre><code class="language-js"><!--
-    -->document.addEventListener("keydown", handleKeydownEvents);
+    -->document.addEventListener("keydown", (e) => handleKeydownEvents(e));
 function handleKeydownEvents(e) {
     if (e.key === "Delete") startEmptyMode();
     if (e.key === "Enter" || e.key === " ") switchTeamColor();
