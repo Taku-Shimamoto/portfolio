@@ -41,7 +41,8 @@ const closeButton = document.getElementById("close");
 
 // Data
 const COLOR_TABLE = {
-    red: { 
+    red: {
+        id: "red",
         name: "赤",
         backgroundColor: "#feea",
         textColor: "#f00",
@@ -50,6 +51,7 @@ const COLOR_TABLE = {
     },
 
     blue: {
+        id: "blue",
         name: "青",
         backgroundColor: "#eefa",
         textColor:"#00a",
@@ -57,7 +59,8 @@ const COLOR_TABLE = {
         opposite: "red",
     },
 
-    black: { 
+    black: {
+        id: "black",
         name: "黒",
         backgroundColor: "#ccca",
         textColor: "#000",
@@ -66,6 +69,7 @@ const COLOR_TABLE = {
     },
 
     white: {
+        id: "white",
         name: "白",
         backgroundColor: "#fff",
         textColor:"#000",
@@ -241,12 +245,10 @@ let team2 = null;
 let canMakeEmptyCell = false;
 let isVisible = false;
 
-// ボタン選択フェーズ
 function addButtonColor() {
-    const buttonColor1 = colorButtons[0].id;
-    const buttonColor2 = colorButtons[1].id;
-    colorButtons[0].style.backgroundColor = COLOR_TABLE[buttonColor1].stoneColor;
-    colorButtons[1].style.backgroundColor = COLOR_TABLE[buttonColor2].stoneColor;
+    for (let i = 0; i < colorButtons.length; i ++) {
+        colorButtons[i].style.backgroundColor = COLOR_TABLE[colorButtons[i].id].stoneColor;
+    }
 }
 addButtonColor();
 
@@ -259,6 +261,7 @@ function decideTeamColors(e) {
     showTeamColors(currentTeam);
     colorButtonWrapper.style.height = "0";
     qtyText.style.display = "block";
+    emptyButton.disabled = false;
     
     for (let i = 0; i < centers.length; i ++) {
         stones[centers[i]].classList.remove("empty");
@@ -316,8 +319,14 @@ function startEmptyMode() {
     canMakeEmptyCell = true;
 
     teamColorText.textContent = "";
-    requestText.textContent = "削除する場所をクリックしてください。Escキーを押すとキャンセルできます。";
+    requestText.textContent = "削除する場所をクリックしてください。";
+    emptyButton.textContent = "キャンセル";
 }
+
+emptyButton.addEventListener("click", () => {
+    if (canMakeEmptyCell) escapeEmptyMode();
+    else emptyCell();
+});
 
 // エスケープモードのキャンセル
 function escapeEmptyMode() {
@@ -326,6 +335,7 @@ function escapeEmptyMode() {
     teamColorText.textContent = COLOR_TABLE[currentTeam].name;
     teamColorText.style.color = COLOR_TABLE[currentTeam].textColor;
     showRequestMessage();
+    emptyButton.textContent = "石を取り除く";
 }
 
 // 石の色を消す
