@@ -325,7 +325,7 @@ function startEmptyMode() {
 
 emptyButton.addEventListener("click", () => {
     if (canMakeEmptyCell) escapeEmptyMode();
-    else emptyCell();
+    else startEmptyMode();
 });
 
 // エスケープモードのキャンセル

@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 :root {
     /* 盤面の縦横のマス数(盤面生成にも使用) */
     --cell: 6;
@@ -17,17 +19,26 @@
     --stone-border-color: #aaa;
 
     /* layout */
-    --cell-border-width: 1px;
+    --border-width: 1px;
     --cell-highlight-width: 3px;
     --cell-size: 80px;
+    --close-button-size: 48px;
+    --close-button-height: 2px;
+    --close-button-width: 32px;
     --modal-border-width: 8px;
+    --modal-width: 400px;
     --stone-size: 64px;
 
+    /* duration */
+    --stone-transition-duration: .8s;
+    --stone-transition-delay: .4s;
+
     /* spacing */
+    --space-xx-small: 4px;
 }
 
 body {
-    transition: background-color .5s ease;
+    transition: background-color var(--duration-medium) ease;
 }
 
 h1, h2, h3 {
@@ -41,22 +52,22 @@ h1, h2, h3 {
 
 .color-button-wrapper {
     display: flex;
-    gap: 16px;
+    gap: var(--space-small);
     height: var(--cell-size);
     justify-content: center;
     overflow-y: hidden;
-    transition: height .5s;
+    transition: height var(--duration-medium);
 }
 
 .color-button {
-    border: none;
+    border: var(--border-width) solid var(--stone-border-color);
     border-radius: 50%;
     height: var(--stone-size);
     width: var(--stone-size)
 }
 
 .color-button:hover {
-    opacity: .6;
+    opacity: var(--opacity-base);
 }
 
 .board {
@@ -68,7 +79,7 @@ h1, h2, h3 {
 
 .stone-cell {
     background-color: var(--cell-background);
-    border: var(--cell-border-width) dotted var(--border-color);
+    border: var(--border-width) dotted var(--border-color);
     display: grid;
     place-items: center;
 }
@@ -86,13 +97,13 @@ h1, h2, h3 {
 }
 
 .stone {
-    border: 1px solid var(--stone-border-color);
+    border: var(--border-width) solid var(--stone-border-color);
     border-radius: 50%;
     cursor: pointer;
     height: var(--stone-size);
     transition-property: background-color, transform;
-    transition-duration: 0s, .8s;
-    transition-delay: .4s, 0s;
+    transition-duration: 0s, var(--stone-transition-duration);
+    transition-delay: var(--stone-transition-delay), 0s;
     width: var(--stone-size);
 }
 
@@ -125,7 +136,7 @@ h1, h2, h3 {
     place-items: center;
     position: fixed;
     top: 0;
-    transition: all .8s;
+    transition: all var(--duration-long);
     visibility: hidden;
     width: 100%;
     z-index: 30;
@@ -139,46 +150,46 @@ h1, h2, h3 {
 .modal {
     background-color: var(--modal-background);
     border: var(--modal-border-width) solid var(--outer-shadow-color);
-    border-radius: 16px;
-    padding: 16px;
+    border-radius: var(--space-small);
+    padding: var(--space-small);
     position: relative;
-    transition: all .8s;
-    width: 400px;
+    transition: all var(--duration-long);
+    width: var(--modal-width);
     z-index: 40;
 }
 
 .close {
     cursor: pointer;
-    height: 48px;
+    height: var(--close-button-size);
     position: absolute;
-    right: 8px;
-    top: 4px;
-    width: 48px;
+    right: var(--space-x-small);
+    top: var(--space-xx-small);
+    width: var(--close-button-size);
 }
 
 .close span {
     background-color: var(--close-button-color);
-    border-radius: 50px;
+    border-radius: var(--border-radius-max);
     display: block;
-    height: 2px;
+    height: var(--close-button-height);
     position: absolute;
-    right: 8px;
-    top: 4px;
-    width: 32px;
+    right: var(--space-x-small);
+    top: var(--space-xx-small);
+    width: var(--close-button-width);
 }
 
 .close span:nth-of-type(1) {
-    top: 24px;
+    top: var(--space-medium);
     transform: rotate(-45deg);
 }
 
 .close span:nth-of-type(2) {
-    top: 24px;
+    top: var(--space-medium);
     transform: rotate(45deg);
 }
 
 h3 {
-    font-size: 32px;
+    font-size: var(--font-size-xx-large);
     text-align: center;
 }
 
