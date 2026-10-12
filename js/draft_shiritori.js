@@ -67,66 +67,6 @@ const TEAMS = {
     },
 };
 
-// フェーズの流れ
-const PHASE_FLOW = [
-    {
-        phase: "beforeStarting",
-        name: "ドラフトしりとリレー",
-        message: "「スタート！」を押すとゲームが始まります。",
-        timeLimit: null,
-        buttonLabel: "スタート！",
-        function: setInitialStates,
-    },
-    {
-        phase: "random",
-        name: "ランダム文字選択フェーズ",
-        message: "ランダムで文字を選びます。",
-        timeLimit: null,
-        buttonLabel: "ランダムで選ぶ",
-        function: startRandomPickPhase,
-    },
-    {
-        phase: "ban",
-        name: "使用禁止フェーズ",
-        message: "使用禁止する文字を選びます。",
-        timeLimit: 20,
-        buttonLabel: "ランダムで選ぶ",
-        function: startBanPhase,
-    },
-    {
-        phase: "pick",
-        name: "文字選択フェーズ",
-        message: "使用する文字を選びます。",
-        timeLimit: 20,
-        buttonLabel: "ランダムで選ぶ",
-        function: startLetterPickPhase,
-    },
-    {
-        phase: "thinking",
-        name: "シンキングタイム",
-        message: "シンキングタイムです。",
-        timeLimit: 30,
-        buttonLabel: "スタート！",
-        function: startThinkingTime,
-    },
-    {
-        phase: "relay",
-        name: "しりとりリレー",
-        message: "リレーを完成させましょう！",
-        timeLimit: 90,
-        buttonLabel: "一時停止",
-        function: startRelayCountDown,
-    },
-    {
-        phase: "finish",
-        name: "Time up!",
-        message: "ポイントを集計してください。",
-        timeLimit: null,
-        buttonLabel: "次のラウンドへ",
-        function: startFinishPhase,
-    },
-];
-
 // ピックの流れ
 const PICK_FLOW = {
     4: [1, 1, 2, 2, 1, 1,],
@@ -158,7 +98,7 @@ const RULE_GUIDES = {
                         </p>
                     </li>
                     <li>
-                        使用禁止フェーズ(20秒)
+                        使用禁止フェーズ(10秒)
                         <p>
                             使用禁止にする文字を各チーム交互に、2文字ずつ選びます。<br />
                             両チームで合計4文字が使用禁止として選ばれます。<br />
@@ -177,7 +117,7 @@ const RULE_GUIDES = {
                         </p>
                     </li>
                     <li>
-                        文字選択フェーズ(20秒)
+                        文字選択フェーズ(10秒)
                         <p>
                             使用禁止に選ばれた文字以外から、各チーム交互に文字を選んでいきます。<br />
                             通常モードとは違い、他のチームが先に選んだ文字を重複して選ぶことはできません。
@@ -265,6 +205,66 @@ const gameStates = {
         return PICK_FLOW[teamMembers][this.currentPickStep];
     },
 };
+
+// フェーズの流れ
+const PHASE_FLOW = [
+    {
+        phase: "beforeStarting",
+        name: "ゲームスタート",
+        message: "「スタート！」を押すとゲームが始まります。",
+        timeLimit: null,
+        buttonLabel: "スタート！",
+        function: setInitialStates,
+    },
+    {
+        phase: "random",
+        name: "ランダム文字選択",
+        message: "「ランダムで選ぶ」ボタンを押しましょう。",
+        timeLimit: null,
+        buttonLabel: "ランダムで選ぶ",
+        function: startRandomPickPhase,
+    },
+    {
+        phase: "ban",
+        name: "使用禁止フェーズ",
+        message: "使用禁止する文字を選びます。",
+        timeLimit: 10,
+        buttonLabel: "ランダムで選ぶ",
+        function: startBanPhase,
+    },
+    {
+        phase: "pick",
+        name: "文字選択フェーズ",
+        message: "使用する文字を選びます。",
+        timeLimit: 10,
+        buttonLabel: "ランダムで選ぶ",
+        function: startLetterPickPhase,
+    },
+    {
+        phase: "prepare",
+        name: "準備時間",
+        message: "間もなくゲームが始まります。",
+        timeLimit: gameStates.mode.name === "normal" ? 30 : 10,
+        buttonLabel: "一時停止",
+        function: startPreparationTime,
+    },
+    {
+        phase: "relay",
+        name: "しりとりリレー",
+        message: "リレーを完成させましょう！",
+        timeLimit: 90,
+        buttonLabel: "一時停止",
+        function: startRelayCountDown,
+    },
+    {
+        phase: "finish",
+        name: "Time up!",
+        message: "試合結果を集計してください。",
+        timeLimit: null,
+        buttonLabel: "次のラウンドへ",
+        function: startFinishPhase,
+    },
+];
 
 // モード切り替え
 document.addEventListener("keydown", (e) => {
@@ -367,6 +367,8 @@ function clearAllStateAndUI() {
     team2PickedLetterBoxes.forEach((box) => box.textContent = "");
     team1PickedLetterBoxes.forEach((box) => box.classList.remove("pop"));
     team2PickedLetterBoxes.forEach((box) => box.classList.remove("pop"));
+    team1PickedLetterBoxes.forEach((box) => box.classList.remove("highlighted"));
+    team2PickedLetterBoxes.forEach((box) => box.classList.remove("highlighted"));
 }
 
 // モーダルの表示 / 非表示
@@ -520,15 +522,15 @@ function handleGameProgress() {
         return;
     }
 
-    // ----- 4. シンキングタイム -----
-    if (gameStates.step.phase === "thinking") {
-        handleThinkingAndRelayPhases();
+    // ----- 4. 準備時間 -----
+    if (gameStates.step.phase === "prepare") {
+        handlePreparationPhase();
         return;
     }
 
     // ----- 5. リレー開始 -----
     if (gameStates.step.phase === "relay") {
-        handleThinkingAndRelayPhases();
+        handleRelayPhase();
         return;
     }
 
@@ -575,7 +577,7 @@ function handleBanPhase(i, pickedLetter) {
 
         return;
     } else {
-        setTimeout(showBanPickConfirmmation, DELAY_MS);
+        setTimeout(showBanPickConfirmation, DELAY_MS);
     }
 }
 
@@ -620,8 +622,18 @@ function handlePickPhase(i, pickedLetter) {
     }
 }
 
-// 4.5. シンキングタイムとリレーフェーズの操作
-function handleThinkingAndRelayPhases() {
+// 4. 準備時間の操作
+function handlePreparationPhase() {
+    if (gameStates.isCounting) stopCountDown();
+    else startCountDown();
+        
+    progressButton.textContent = gameStates.isCounting
+        ? "一時停止"
+        : "再開する";
+}
+
+// 5. リレー開始フェーズの操作
+function handleRelayPhase() {
     if (gameStates.isCounting) stopCountDown();
     else startCountDown();
         
@@ -719,7 +731,7 @@ function showBannedLetters() {
 }
 
 // BANピック確認モーダルの表示
-function showBanPickConfirmmation() {
+function showBanPickConfirmation() {
     bannedLetters.sort();   // 不適切語をつくらないための簡易的な措置
     showBannedLetters();
     openModal("banConfirmation");
@@ -806,7 +818,7 @@ function countTime() {
             return;
         }
 
-        if (gameStates.step.phase === "thinking") {
+        if (gameStates.step.phase === "prepare") {
             resetTimeCount();
             goToNextStep();
             return;
@@ -855,7 +867,7 @@ gameStates.step.function();
 
 // ----- 1. ランダム文字選択フェーズ -----
 function startRandomPickPhase() {
-    if (gameStates.mode.name === "normal")  {
+    if (gameStates.mode.name === "normal") {
         goToNextStep();
         return;
     }
@@ -889,23 +901,50 @@ function startLetterPickPhase() {
     startCountDown();
 }
 
-// -----4. シンキングタイム -----
-function startThinkingTime() {
+// -----4. 準備時間 -----
+function startPreparationTime() {
     TEAMS["team1"].areaElement.classList.add("active");
     TEAMS["team2"].areaElement.classList.add("active");
 
     resetTimeCount();
+    startCountDown();
 }
 
 // ----- 5. リレー開始 -----
 function startRelayCountDown() {
     resetTimeCount();
+
+    gameStates.currentTeam = "team1";
+    replacePickedLetters();
+
+    gameStates.currentTeam = "team2";
+    replacePickedLetters();
+
     startCountDown();
 }
 
 // ----- 6. ラウンド終了 -----
 function startFinishPhase() {
     return;
+}
+
+// リレー開始時に文字の再抽選と入れ替えを行う
+function replacePickedLetters() {
+
+    const randomPickedIndex = Math.floor(Math.random() * gameStates.team.pickedLetters.length);
+    gameStates.team.pickedLetters.splice(randomPickedIndex, 1);
+
+    const [randomIndex, randomPickedLetter] = pickLetterAtRandom();
+
+    removePickedLetterFromBothPickableLetters(randomIndex);
+    gameStates.team.pickedLetters.push(randomPickedLetter);
+    disableLetterButton(randomPickedLetter);
+
+    gameStates.team.pickedLetters.sort();
+    showPickedLetters();
+
+    const highlightIndex = gameStates.team.pickedLetters.indexOf(randomPickedLetter);
+    gameStates.team.pickedLetterBoxElements[highlightIndex].classList.add("highlighted");
 }
 
 // 通常モードのBANフェーズ
@@ -922,7 +961,7 @@ function handleNormalBanPhase() {
     }
 
     showBannedLetters();
-    setTimeout(showBanPickConfirmmation, DELAY_MS);
+    setTimeout(showBanPickConfirmation, DELAY_MS);
 }
 
 // 通常モードの文字選択フェーズ

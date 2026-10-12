@@ -38,7 +38,6 @@
     --font-size-x-large: 32px;
     --primary-font: sans-serif;
     --head-font: "UD デジタル 教科書体 NP";
-    --team-logo-font: "Times New Roman";
     --letter-spacing-base: .05em;
 
     /* layout */
@@ -72,7 +71,7 @@
         transform: scale(1.0);
     }
     50% {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1.0);
@@ -239,7 +238,7 @@ h1, h3 {
 }
 
 h2 {
-    font-family: var(--team-logo-font);
+    font-family: var(--head-font);
 }
 
 .team {
