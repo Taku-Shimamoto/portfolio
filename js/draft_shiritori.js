@@ -385,7 +385,7 @@ function openModal(content) {
         banInfoModal.classList.add("active");
         banInfoModal.innerHTML = 
         `
-            <h4>このラウンドでは両チームともこれらの文字を使用することはできません！</h4>
+            <h4>このラウンドでは両チームともこれらの文字を選択することはできません！</h4>
             <div class="ban-confirmation">
                 ${bannedLetters.map((letter) => `<i class="fa-solid fa-ban"></i><div class="banned-letter">${letter}</div>`).join("")}
             </div>
