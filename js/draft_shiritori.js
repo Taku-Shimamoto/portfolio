@@ -143,7 +143,7 @@ const bannedLetters = [];                       // BANピックされた文字�
 let bannableLetters = [...LETTERS];             // BANピックできる文字を格納
 
 // 固定値
-let teamMembers = 5;                // 将来的にletかconstかを決定
+let teamMembers = 4;                // 将来的にletかconstかを決定
 let totalBannableLetters = 4;       // 将来的にletかconstかを決定
 const TOTAL_TEAM_LETTERS = teamMembers + 1;
 const DELAY_MS = 1000;
@@ -244,7 +244,7 @@ const PHASE_FLOW = [
         phase: "prepare",
         name: "準備時間",
         message: "間もなくゲームが始まります。",
-        timeLimit: gameStates.mode.name === "normal" ? 30 : 10,
+        timeLimit: 30,
         buttonLabel: "一時停止",
         function: startPreparationTime,
     },
@@ -274,6 +274,7 @@ function changeMode() {
     if (gameStates.step.phase !== "beforeStarting") return;
     if (gameStates.mode.name === "draft") return;
     gameStates.modeIndex = 1;
+    PHASE_FLOW[4].timeLimit = 10;
     changeColors();
     clearAllStateAndUI();
 }
@@ -914,11 +915,13 @@ function startPreparationTime() {
 function startRelayCountDown() {
     resetTimeCount();
 
-    gameStates.currentTeam = "team1";
-    replacePickedLetters();
+    if (gameStates.mode.name === "draft") {
+        gameStates.currentTeam = "team1";
+        replacePickedLetters();
 
-    gameStates.currentTeam = "team2";
-    replacePickedLetters();
+        gameStates.currentTeam = "team2";
+        replacePickedLetters();
+    }
 
     startCountDown();
 }
